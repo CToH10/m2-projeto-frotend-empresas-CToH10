@@ -24,26 +24,29 @@
     <title>Mudar com JS</title>
 </head>
 <body>
-    <header>
-        <section class="pageLogo">
+    <header class="flex justifyBetween alignCenter absolute">
+        <section class="pageLogo flex justifyBetween gap-3">
             <img src="../../assets/img/Ellipse 1.svg" alt="Bola violeta">
             <h1>Kenzie Empresas</h1>
         </section>
-        <nav>
-            <button>Login</button>
-            <button>Cadastro</button>
+        <nav class="dropdown relative">
+            <button class="dropdownBtn relative"></button>
+            <section class="formsBtn noShow absolute flex gap-1 alignCenter justifyCenter">
+                <button class="homeBtn">Home</button>
+                <button class="registerBtn">Cadastro</button>
+            </section>
         </nav>
     </header>
-    <main>
-        <section class="register">
+    <main class="absolute">
+        <section class="login flexColumn gap-1">
             <h2>Login</h2>
             <p>Preencha os campos para realizar login</p>
-            <form>
-                <input type="email" name="" id="" placeholder="Seu e-mail" required >
-                <input type="password" name="" id="" placeholder="Sua senha" required >
-                <button type="submit">Cadastre-se</button>
+            <form class="flexColumn gap-1">
+                <input type="email" name="" placeholder="Seu e-mail" class="formInputs" required >
+                <input type="password" name="" placeholder="Sua senha" class="formInputs" required >
+                <button type="submit" class="submitForm">Login</button>
             </form>
-            <p>ou</p>
+            <p class="selfCenter">ou</p>
             <button class="goBack">Cadastre-se</button>
         </section>
     </main>

@@ -23,31 +23,34 @@
     <title>Mudar com JS</title>
 </head>
 <body>
-    <header>
-        <section class="pageLogo">
+    <header class="flex justifyBetween alignCenter absolute">
+        <section class="pageLogo flex justifyBetween gap-3">
             <img src="../../assets/img/Ellipse 1.svg" alt="Bola violeta">
             <h1>Kenzie Empresas</h1>
         </section>
-        <nav>
-            <button>Login</button>
-            <button>Cadastro</button>
+        <nav class="dropdown relative">
+            <button class="dropdownBtn relative"></button>
+            <section class="formsBtn noShow absolute flex gap-1 alignCenter justifyCenter">
+                <button class="homeBtn">Home</button>
+                <button class="registerBtn">Login</button>
+            </section>
         </nav>
     </header>
-    <main>
-        <section class="register">
+    <main class="absolute">
+        <section class="register flexColumn gap-1">
             <h2>Cadastre-se</h2>
-            <form>
-                <input type="text" name="" id="" placeholder="Seu nome" required >
-                <input type="email" name="" id="" placeholder="Seu e-mail" required >
-                <input type="password" name="" id="" placeholder="Sua senha" required >
-                <select name="" id="">
+            <form class="flexColumn gap-1">
+                <input type="text" name="" placeholder="Seu nome" class="formInputs" required >
+                <input type="email" name="" placeholder="Seu e-mail" class="formInputs" required >
+                <input type="password" name="" placeholder="Sua senha" class="formInputs" required >
+                <select name="" class="formInputs">
                     <option value="">Nível profissional</option>
                     <option value="estágio">Estágio</option>
                     <option value="júnior">Júnior</option>
                     <option value="pleno">Pleno</option>
                     <option value="sênior">Sênior</option>
                 </select>
-                <button type="submit">Cadastre-se</button>
+                <button type="submit" class="submitForm">Cadastre-se</button>
             </form>
             <button class="goBack">Retornar</button>
         </section>

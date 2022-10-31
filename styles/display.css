@@ -23,6 +23,10 @@
     align-items: center;
 }
 
+.selfCenter {
+    align-self: center;
+}
+
 .gap-1 {
     gap: var(--margin-1);
 }

@@ -1,0 +1,22 @@
+body {
+    background-image: url("../../assets/img/Rectangle\ 7.svg");
+    background-attachment: fixed;
+    background-position: 60%;
+}
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    box-shadow: var(--shadow);
+    background-color: var(--color-white);
+}
+
+main {
+    top: 15vh;
+}
+
+.register {
+    width: 100vw;
+    background-color: var(--color-white-opaque);
+    padding: var(--paddingForm);
+}

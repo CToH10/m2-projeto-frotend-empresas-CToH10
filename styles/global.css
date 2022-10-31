@@ -4,6 +4,7 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -13,7 +14,10 @@ body {
 :root {
   --color-blue: #4200FF;
   --color-white: #FFFFFF;
+  --color-white-opaque:#fffffff2;
   --color-black: #000000;
+  --color-black-opaque: #00000033;
+  --color-black-opaque-2: #00000080;
   --color-red: #CE4646;
   --color-green: #4BA036;
 
@@ -26,10 +30,12 @@ body {
   --font-size-5: 5.2vmin;
   --font-size-6: 1.2vmin;
 
-  --paddingSearchButton: 1.3vh 2vw;
-  --paddingUsernameInput: 1.3vh 1vw;
+  --paddingSearchButton: 0;
+  --paddingNavBtn: 1.3vh 1vw;
+  --paddinFormInput: 1.5vh 3vw;
   --paddingInfoLeft: 5vw;
-  --paddingAccessUser: 0.5vh 0.1vw;
+  --paddingForm: 4vh 3vw 3vh;
+  --paddingFormButtons: 1.32vh 0;
   
   --margin-1: 2.1vh;
   --margin-2: 1vw;
@@ -48,4 +54,14 @@ img {
 
 ul {
   list-style: none;
+}
+
+.formsBtn {
+  top: 4.24vh;
+  right: 0;
+  width: 100vw;
+  height: 12vh;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow);
+  z-index: 3;
 }

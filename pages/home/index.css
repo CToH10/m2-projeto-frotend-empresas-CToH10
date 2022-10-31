@@ -11,16 +11,6 @@ main {
     width: 90vw;
 }
 
-.formsBtn {
-    top: 4.24vh;
-    right: 0;
-    width: 100vw;
-    height: 12vh;
-    background-color: var(--color-white);
-    box-shadow: var(--shadow);
-    z-index: 3;
-}
-
 .imageSection {
     display: none;
 }

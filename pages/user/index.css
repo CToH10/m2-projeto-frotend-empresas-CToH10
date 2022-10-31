@@ -1,3 +1,9 @@
+main {
+    top: 10vh;
+    left: 5vw;
+    width: 90vw;
+}
+
 .edit {
     background-image: url(../../assets/img/edit.svg);
     background-repeat: no-repeat;
