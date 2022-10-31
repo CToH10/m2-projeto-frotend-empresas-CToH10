@@ -196,3 +196,43 @@ export function viewDepartment() {
     modalSect.appendChild(modalBox)
     return modalSect
 }
+
+export function editProfile() {
+    let modalSect     = modal()
+    let modalBox      = document.createElement("section")
+    let closeModal    = document.createElement("button")
+    let editTitle     = document.createElement("h2")
+    let editForm      = document.createElement("form")
+    let userNameInput = document.createElement("input")
+    let emailInput    = document.createElement("input")
+    let passwordInput = document.createElement("input")
+    let confirmEdit   = document.createElement("button")
+
+    confirmEdit.type = "submit"
+
+    editForm.addEventListener("submit", (event) => {
+        event.preventDefault()
+    })
+
+    closeModal.innerText = "X"
+    closeModal.addEventListener("click", ()=> {
+        modalSect.remove()
+    })
+
+    editForm.classList = "flexColumn gap-1"
+    
+    emailInput.type = "email"
+    passwordInput.type = "password"
+
+    userNameInput.placeholder = "Seu nome"
+    emailInput.placeholder = "Seu e-mail"
+    passwordInput.placeholder = "Sua senha"
+
+    confirmEdit.innerText = "Editar perfil"
+
+    modalSect.appendChild(modalBox)
+    modalBox.append(closeModal, editTitle, editForm)
+    editForm.append(userNameInput, emailInput, passwordInput, confirmEdit)
+
+    return modalSect
+}
