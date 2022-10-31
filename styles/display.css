@@ -28,7 +28,7 @@
 }
 
 .gap-2 {
-    gap: calc(var(--margin-1) * 2.5);
+    gap: calc(var(--margin-1) * 0.3);
 }
 
 .gap-3 {
@@ -37,4 +37,8 @@
 
 .gap-4 {
     gap: calc(var(--margin-2) * 1.5);
+}
+
+.noShow {
+    display: none;
 }

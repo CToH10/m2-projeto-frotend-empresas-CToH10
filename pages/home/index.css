@@ -1,0 +1,43 @@
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    box-shadow: var(--shadow);
+}
+
+main {
+    top: 10vh;
+    left: 5vw;
+    width: 90vw;
+}
+
+.formsBtn {
+    top: 4.24vh;
+    right: 0;
+    width: 100vw;
+    height: 12vh;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow);
+    z-index: 3;
+}
+
+.imageSection {
+    display: none;
+}
+
+.companiesList {
+    overflow-x: scroll;
+}
+
+.company {
+    height: 20vh;
+    min-width: 50vw;
+}
+
+.companyInfo {
+    border-bottom: 1px solid var(--color-blue);
+}
+
+.enterName, .companyInfo {
+    padding-left: var(--paddingInfoLeft);
+}
