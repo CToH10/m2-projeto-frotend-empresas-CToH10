@@ -1,0 +1,47 @@
+.pageId {
+    color: var(--color-grey-7);
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-1);
+}
+
+.pageDesc {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-3);
+    color: var(--color-grey-7);
+}
+
+.lastTitle {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-2);
+    color: var(--color-grey-7);
+}
+
+.searchTitle, .repoTitle {
+    color: var(--color-grey-7);
+    font-weight: var(--font-weight-2);
+    font-size: var(--font-size-2);
+}
+
+.searchLabel {
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-2);
+    color: var(--color-grey-7);
+}
+
+.repoDesc {
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-3);
+    color: var(--color-grey-6);
+}
+
+.userName {
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-4);
+    color: var(--color-grey-7);
+}
+
+.userNotFound {
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-3);
+    color: var(--color-brand-1);
+}

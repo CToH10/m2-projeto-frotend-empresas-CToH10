@@ -1,0 +1,19 @@
+.marginCentralize {
+    margin: 0 auto;
+}
+
+.marginBottom {
+    margin-bottom: var(--margin-1);
+}
+
+.biggerMarginBottom {
+    margin-bottom: calc(var(--margin-1) * 2);
+}
+
+.marginRight {
+    margin-right: calc(var(--margin-2) * 5);
+}
+
+.smallMarginRight {
+    margin-right: calc(var(--margin-2) * 2);
+}

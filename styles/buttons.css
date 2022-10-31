@@ -1,0 +1,64 @@
+.searchButton {
+    max-height: 12vh;
+    padding: var(--paddingSearchButton);
+    font-weight: var(--font-weight-2);
+    font-size: var(--font-size-4);
+    background-color: var(--color-brand-2);
+    border: 1.5px solid var(--color-brand-2);
+    color: var(--color-grey-7);
+    border-radius: var(--radius-default);
+    cursor: pointer;
+    text-align: center;
+}
+
+.searchButton:disabled {
+    background-color: var(--color-brand-2);
+    border: 1.5px solid var(--color-brand-2);
+    color: var(--color-grey-7);
+    opacity: 0.35;
+}
+
+.searchButton:hover {
+    background-color: var(--color-brand-1);
+    border: 1.5px solid var(--color-brand-1);
+    color: var(--color-grey-7);
+}
+
+.userContact {
+    font-weight: var(--font-weight-1);
+}
+
+.changeUser {
+    max-height: 12vh;
+    padding: var(--paddingUsernameInput);
+    border-radius: var(--radius-default);
+    background-color: var(--color-grey-3);
+    border: 1px solid var(--color-grey-3);
+    color: var(--color-grey-7);
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.changeUser:hover {
+    background-color: var(--color-grey-1);
+    border: 1px solid var(--color-grey-1);
+}
+
+.repoButtons {
+    padding: var(--paddingRepoButtons);
+    border-radius: var(--radius-default);
+    background-color: var(--color-grey-1);
+    border: 1px solid var(--color-grey-7);
+    color: var(--color-grey-7);
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.repoButtons:hover, .repoButtons:focus {
+    background-color: var(--color-brand-1);
+    border: 1px solid var(--color-brand-1);
+}

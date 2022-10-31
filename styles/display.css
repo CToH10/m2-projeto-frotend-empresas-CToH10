@@ -1,0 +1,40 @@
+.flex {
+    display: flex;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.justifyBetween {
+    justify-content: space-between;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.gap-1 {
+    gap: var(--margin-1);
+}
+
+.gap-2 {
+    gap: calc(var(--margin-1) * 2.5);
+}
+
+.gap-3 {
+    gap: var(--margin-2);
+}
+
+.gap-4 {
+    gap: calc(var(--margin-2) * 1.5);
+}
