@@ -6,12 +6,16 @@
   text-decoration: none;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 :root {
-  --color-primary: #5746af;
-  --color-grey-1: #0d1114;
-  --color-grey-2: #11181c;
-  --color-grey-3: #d7dbdf;
-  --color-grey-4: #e6e8eb;
+  --color-blue: #4200FF;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-red: #CE4646;
+  --color-green: #4BA036;
 
   --radius-default: 0.3rem;
 
@@ -43,9 +47,4 @@ img {
 
 ul {
   list-style: none;
-}
-
-.container {
-  max-width: var(--container-1);
-  margin: 0 auto;
 }
