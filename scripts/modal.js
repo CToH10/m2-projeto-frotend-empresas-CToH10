@@ -145,3 +145,54 @@ export function newDepartment() {
 
     return modalSect
 }
+
+export function viewDepartment() {
+    let modalSect = modal()
+    let modalBox    = document.createElement("section")
+    let closeModal = document.createElement("button")
+    let dptTitle     = document.createElement("h2")
+    let dptId = document.createElement("section")
+    let dptSect = document.createElement("section")
+    let dptDesc = document.createElement("h3")
+    let companyName = document.createElement("p")
+    let getWorker = document.createElement("section")
+    let newWorker = document.createElement("select")
+    let selectWorker = document.createElement("option")
+    let hire = document.createElement("button")
+    let workersList = document.createElement("ul")
+    let workerCard = document.createElement("li")
+    let workerInfo = document.createElement("section")
+    let workerName = document.createElement("h3")
+    let workerLevel = document.createElement("p")
+    let workerCompany = document.createElement("p")
+    let fireWorker = document.createElement("button")
+
+    modalBox.append(closeModal, dptTitle, dptId, workersList)
+    dptId.append(dptSect, getWorker)
+    dptSect.append(dptDesc, companyName)
+    getWorker.append(newWorker, hire)
+    newWorker.appendChild(selectWorker)
+    workersList.append(workerCard, fireWorker)
+    workerCard.appendChild(workerInfo)
+    workerInfo.append(workerName, workerLevel, workerCompany)
+
+    dptTitle.innerText = "Nome do departamento"
+    dptDesc.innerText = "Descrição"
+    companyName.innerText = "Nome da empresa"
+    selectWorker.innerText = "Selecionar usuário"
+    workerName.innerText = "Nome de usuário"
+    workerLevel.innerText = "Pleno"
+    workerLevel.innerText = "Company name"
+    fireWorker.innerText = "Desligar"
+
+    getWorker.type = "submit"
+
+
+    closeModal.innerText = "X"
+    closeModal.addEventListener("click", ()=> {
+        modalSect.remove()
+    })
+
+    modalSect.appendChild(modalBox)
+    return modalSect
+}

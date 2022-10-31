@@ -1,3 +1,14 @@
+.open {
+    background-image: url(../../assets/img/eye.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    width: 2vw;
+    height: 4vh;
+    cursor: pointer;
+}
+
 .edit {
     background-image: url(../../assets/img/edit.svg);
     background-repeat: no-repeat;
