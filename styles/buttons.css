@@ -1,3 +1,36 @@
+.open {
+    background-image: url(../../assets/img/eye.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    width: 26%;
+    height: 5vh;
+    cursor: pointer;
+}
+
+.edit {
+    background-image: url(../../assets/img/edit.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    width: 26%;
+    height: 5vh;
+    cursor: pointer;
+}   
+
+.delete {
+    background-image: url(../../assets/img/trashcan.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    width: 26%;
+    height: 5vh;
+    cursor: pointer;
+}
+
 .dropdownBtn {
     display: inline-block;
     background-image: url(../../assets/img/grad.svg);
@@ -38,7 +71,7 @@
     text-align: center;
 }
 
-.submitForm {
+.submitForm, .newDpt  {
     background-color: var(--color-blue);
     border: 1px solid var(--color-blue);
     padding: var(--paddingFormButtons);
@@ -46,10 +79,10 @@
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-1);
     cursor: pointer;
-    text-align: center;
+    text-align: center; 
 }
 
-.goBack {
+.goBack, .logout {
     background-color: var(--color-white);
     border: 1px solid var(--color-blue);
     padding: var(--paddingFormButtons);
@@ -58,4 +91,12 @@
     font-weight: var(--font-weight-1);
     cursor: pointer;
     text-align: center;
+}
+
+.logout {
+    padding: var(--paddingNavBtn);
+}
+
+.newDpt {
+    max-height: 90%;            
 }

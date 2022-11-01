@@ -1,32 +1,43 @@
-.open {
-    background-image: url(../../assets/img/eye.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
-    border: none;
-    width: 2vw;
-    height: 4vh;
-    cursor: pointer;
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 7vh;
+    box-shadow: var(--shadow);
+    background-color: var(--color-white);
 }
 
-.edit {
-    background-image: url(../../assets/img/edit.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
-    border: none;
-    width: 2vw;
-    height: 4vh;
-    cursor: pointer;
-}   
+main {
+    top: 15vh;
+}
 
-.delete {
-    background-image: url(../../assets/img/trashcan.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
-    border: none;
-    width: 2vw;
-    height: 4vh;
-    cursor: pointer;
+.listDepartments, .allUsers {
+    background-color: var(--color-white-grey);
+    padding: var(--paddingFormButtons);
+    overflow-y: scroll;
+    height: 70vh;
+}
+
+.departmentsHeader {
+    grid-template-columns: auto auto;
+    row-gap: calc(var(--margin-2) * 2);
+}
+
+.departmentsHeader h3 {
+    align-self: center;
+}
+
+.departmentsHeader select {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+
+.listDepartments li, .allUsers li {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-blue);
+    padding: var(--paddingDptId) ;
+}
+
+.allUsers li {
+    width: 65%;
 }

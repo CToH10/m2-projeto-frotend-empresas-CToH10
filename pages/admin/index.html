@@ -11,12 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../../styles/buttons.css">
     <link rel="stylesheet" href="../../styles/display.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
     <link rel="stylesheet" href="../../styles/fonts.css">
     <link rel="stylesheet" href="../../styles/inputs.css">
     <link rel="stylesheet" href="../../styles/margins.css">
     <link rel="stylesheet" href="../../styles/menu.css">
+    <link rel="stylesheet" href="../../styles/modal.css">
     <link rel="stylesheet" href="../../styles/positions.css">
     <link rel="stylesheet" href="../../styles/fonts.css">
     <link rel="stylesheet" href="./index.css">
@@ -24,7 +25,7 @@
     <title>Mudar com JS</title>
 </head>
 <body>
-    <header class="flex justifyBetween">
+    <header class="absolute flex justifyAround alignCenter">
         <section class="pageLogo flex gap-1">
             <img src="../../assets/img/Ellipse 1.svg" alt="Bola violeta">
             <h1>Kenzie Empresas</h1>
@@ -33,11 +34,11 @@
             <button class="logout">Logout</button>
         </nav>
     </header>
-    <main>
-        <section class="departments">
-            <section class="departmentsHeader">
+    <main class="absolute">
+        <section class="departments marginBottom">
+            <section class="departmentsHeader grid marginBottom">
                 <h3>Departamentos</h3>
-                <select name="" id="">
+                <select class="selectCompany marginCentralize">
                     <option value="">Selecionar empresas</option>
                     <option value="empresa">Empresa</option>
                     <option value="empresa">Empresa</option>
@@ -45,50 +46,50 @@
                 </select>
                 <button class="newDpt"><span>+</span> Criar</button>
             </section>
-            <ul class="listDepartments flex wrap">
+            <ul class="listDepartments flex gap-1 justifyCenter wrap">
                 <li>
-                    <section class="dptId">
+                    <section class="dptId marginBottom">
                         <h3 class="dptName">Nome do departamento</h3>
                         <p class="dptDescription">Descrição</p>
                         <p class="enterpriseName">Nome da empresa</p>
                     </section>
-                    <section class="interactDpt flex gap-1">
+                    <section class="interactDpt flex justifyCenter gap-4">
                         <button class="open"></button>
                         <button class="edit"></button>
                         <button class="delete"></button>
                     </section>
                 </li>
                 <li>
-                    <section class="dptId">
+                    <section class="dptId marginBottom">
                         <h3 class="dptName">Nome do departamento</h3>
                         <p class="dptDescription">Descrição</p>
                         <p class="enterpriseName">Nome da empresa</p>
                     </section>
-                    <section class="interactDpt flex gap-1">
+                    <section class="interactDpt flex justifyCenter gap-4">
                         <button class="open"></button>
                         <button class="edit"></button>
                         <button class="delete"></button>
                     </section>
                 </li>
                 <li>
-                    <section class="dptId">
+                    <section class="dptId marginBottom">
                         <h3 class="dptName">Nome do departamento</h3>
                         <p class="dptDescription">Descrição</p>
                         <p class="enterpriseName">Nome da empresa</p>
                     </section>
-                    <section class="interactDpt flex gap-1">
+                    <section class="interactDpt flex justifyCenter gap-4">
                         <button class="open"></button>
                         <button class="edit"></button>
                         <button class="delete"></button>
                     </section>
                 </li>
                 <li>
-                    <section class="dptId">
+                    <section class="dptId marginBottom">
                         <h3 class="dptName">Nome do departamento</h3>
                         <p class="dptDescription">Descrição</p>
                         <p class="enterpriseName">Nome da empresa</p>
                     </section>
-                    <section class="interactDpt flex gap-1">
+                    <section class="interactDpt flex justifyCenter gap-4">
                         <button class="open"></button>
                         <button class="edit"></button>
                         <button class="delete"></button>
@@ -97,48 +98,48 @@
             </ul>
         </section>
         <section class="hiredUsers">
-            <h3 class="hiredTitle">Usuário cadastrados</h3>
-            <ul class="allUsers flex wrap gap-1">
+            <h3 class="hiredTitle marginBottom">Usuário cadastrados</h3>
+            <ul class="allUsers flex gap-1 justifyCenter wrap">
                 <li>
-                    <section class="userId">
+                    <section class="userId marginBottom">
                         <h3 class="userName">Username</h3>
                         <p class="userLevel">Pleno</p>
                         <p class="enterpriseName">Nome da empresa</p>
                     </section>
-                    <section class="interactUser">
+                    <section class="interactUser flex justifyCenter gap-4">
                         <button class="edit userEdit"></button>
                         <button class="delete deleteUser"></button>
                     </section>
                 </li>
                 <li>
-                    <section class="userId">
+                    <section class="userId marginBottom">
                         <h3 class="userName">Username</h3>
                         <p class="userLevel">Pleno</p>
                         <p class="enterpriseName">Nome da empresa</p>
                     </section>
-                    <section class="interactUser">
+                    <section class="interactUser flex justifyCenter gap-4">
                         <button class="edit userEdit"></button>
                         <button class="delete deleteUser"></button>
                     </section>
                 </li>
                 <li>
-                    <section class="userId">
+                    <section class="userId marginBottom">
                         <h3 class="userName">Username</h3>
                         <p class="userLevel">Pleno</p>
                         <p class="enterpriseName">Nome da empresa</p>
                     </section>
-                    <section class="interactUser">
+                    <section class="interactUser flex justifyCenter gap-4">
                         <button class="edit userEdit"></button>
                         <button class="delete deleteUser"></button>
                     </section>
                 </li>
                 <li>
-                    <section class="userId">
+                    <section class="userId marginBottom">
                         <h3 class="userName">Username</h3>
                         <p class="userLevel">Pleno</p>
                         <p class="enterpriseName">Nome da empresa</p>
                     </section>
-                    <section class="interactUser">
+                    <section class="interactUser flex justifyCenter gap-4">
                         <button class="edit userEdit"></button>
                         <button class="delete deleteUser"></button>
                     </section>

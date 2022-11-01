@@ -5,3 +5,7 @@
 .relative {
     position: relative;
 }
+
+.front {
+    z-index: 8;
+}

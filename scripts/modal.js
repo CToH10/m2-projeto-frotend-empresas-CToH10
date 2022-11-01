@@ -1,6 +1,6 @@
 function modal() {
     let modal = document.createElement("section")
-    modal.classList = ""
+    modal.classList = "modal flex justifyCenter alignCenter absolute front"
 
     return modal
 }
