@@ -9,13 +9,19 @@ header {
 
 main {
     top: 15vh;
+    left: 1vw;
 }
 
 .listDepartments, .allUsers {
     background-color: var(--color-white-grey);
     padding: var(--paddingFormButtons);
-    overflow-y: scroll;
-    height: 70vh;
+    overflow-x: scroll;
+    width: 90vw;
+    height: 32vh;
+}
+
+.allUsers {
+    height: 29vh;
 }
 
 .departmentsHeader {
@@ -35,9 +41,7 @@ main {
 .listDepartments li, .allUsers li {
     background-color: var(--color-white);
     border-bottom: 1px solid var(--color-blue);
-    padding: var(--paddingDptId) ;
+    padding: var(--paddingDptId);
+    height: fit-content;
 }
 
-.allUsers li {
-    width: 65%;
-}

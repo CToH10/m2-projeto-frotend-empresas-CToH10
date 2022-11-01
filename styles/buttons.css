@@ -1,10 +1,16 @@
+button {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-1);
+    text-align: center;
+}
+
 .open {
     background-image: url(../../assets/img/eye.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
     border: none;
-    width: 26%;
+    width: 48%;
     height: 5vh;
     cursor: pointer;
 }
@@ -15,7 +21,7 @@
     background-position: center;
     background-color: transparent;
     border: none;
-    width: 26%;
+    width: 34%;
     height: 5vh;
     cursor: pointer;
 }   
@@ -52,10 +58,7 @@
     border: 1.5px solid var(--color-blue);
     color: var(--color-blue);
     padding: var(--paddingNavBtn);
-    font-weight: var(--font-weight-2);
-    font-size: var(--font-size-2);
     cursor: pointer;
-    text-align: center;
 }
 
 .registerBtn {
@@ -65,10 +68,7 @@
     border: 1px solid var(--color-blue);
     color: var(--color-white);
     padding: var(--paddingNavBtn);
-    font-size: var(--font-size-2);
-    font-weight: var(--font-weight-1);
     cursor: pointer;
-    text-align: center;
 }
 
 .submitForm, .newDpt  {
@@ -76,10 +76,7 @@
     border: 1px solid var(--color-blue);
     padding: var(--paddingFormButtons);
     color: var(--color-white);
-    font-size: var(--font-size-2);
-    font-weight: var(--font-weight-1);
     cursor: pointer;
-    text-align: center; 
 }
 
 .goBack, .logout {
@@ -87,10 +84,7 @@
     border: 1px solid var(--color-blue);
     padding: var(--paddingFormButtons);
     color: var(--color-blue);
-    font-size: var(--font-size-2);
-    font-weight: var(--font-weight-1);
     cursor: pointer;
-    text-align: center;
 }
 
 .logout {
@@ -99,4 +93,9 @@
 
 .newDpt {
     max-height: 90%;            
+}
+
+
+@media (min-width: 700px) {
+    
 }

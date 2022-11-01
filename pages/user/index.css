@@ -4,13 +4,39 @@ main {
     width: 90vw;
 }
 
-.edit {
-    background-image: url(../../assets/img/edit.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
-    border: none;
-    width: 2vw;
-    height: 4vh;
-    cursor: pointer;
-} 
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 7vh;
+    box-shadow: var(--shadow);
+    background-color: var(--color-white);
+}
+
+.companyId {
+    background-color: var(--color-blue);
+}
+
+.user {
+    border: 1px solid var(--color-black-opaque);
+    padding: var(--paddingFormInput);
+}
+
+.listCoworkers {
+    background-color: var(--color-white-grey);
+    padding: var(--paddingFormButtons);
+    overflow-x: scroll;
+    width: 90vw;
+    /* height: 32vh; */
+}
+
+.listCoworkers li {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-blue);
+    padding: var(--paddingDptId) ;
+    min-width: 47%;
+}
+
+@media (min-width: 700px) {
+    
+}
