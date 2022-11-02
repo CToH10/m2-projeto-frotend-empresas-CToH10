@@ -68,6 +68,7 @@ usersList.forEach((elem) => {
 
 logout.addEventListener("click", () => {
     localStorage.clear()
+    window.location.href = "../home"
 })
 
 createEnterprise.addEventListener("click", () => {
