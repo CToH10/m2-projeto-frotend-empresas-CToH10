@@ -109,3 +109,19 @@ export async function listSectors() {
         console.log(err)
     }
 }
+
+export async function userInfo(token) {
+    try { let user = await fetch(`${baseUrl}users/profile`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+
+    let userJson = await user.json()
+
+    return userJson
+        
+    } catch (err) {
+        console.log(err)
+    }
+}
