@@ -91,6 +91,7 @@ main {
         padding-top: 1vh;
         background-color: var(--color-white);
         min-width: 42%;
+        max-width: 42%;
     }
 
     .interactDpt, .interactUser {
