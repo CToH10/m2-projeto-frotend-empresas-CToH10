@@ -66,3 +66,16 @@ export async function listUsers() {
         console.log(err)
     }
 }
+
+export async function listSectors() {
+    try { let sectors = await fetch(`${baseUrl}sectors`)
+
+    let sectorsJson = await sectors.json()
+
+    console.log(sectorsJson)
+    return sectorsJson
+
+    } catch (err) {
+        console.log(err)
+    }
+}
