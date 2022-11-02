@@ -252,6 +252,14 @@ export function editProfile() {
     let passwordInput = document.createElement("input")
     let confirmEdit   = document.createElement("button")
 
+    modalBox.classList = "modalBox editBox flexColumn justifyBetween relative"
+    closeModal.classList = "dismissButton absolute"
+    editForm.classList = "editForm flexColumn gap-1"
+    userNameInput.classList = "newInput"
+    emailInput.classList = "newInput"
+    passwordInput.classList = "newInput"
+    confirmEdit.classList = "confirmEdit"
+
     confirmEdit.type = "submit"
 
     editForm.addEventListener("submit", (event) => {
@@ -263,8 +271,6 @@ export function editProfile() {
         modalSect.remove()
     })
 
-    editForm.classList = "flexColumn gap-1"
-    
     emailInput.type = "email"
     passwordInput.type = "password"
 
@@ -272,6 +278,7 @@ export function editProfile() {
     emailInput.placeholder = "Seu e-mail"
     passwordInput.placeholder = "Sua senha"
 
+    editTitle.innerText   = "Editar perfil"
     confirmEdit.innerText = "Editar perfil"
 
     modalSect.appendChild(modalBox)
