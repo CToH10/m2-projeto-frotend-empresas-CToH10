@@ -10,166 +10,179 @@
     top: 6vh;
     left: 5vw;
     width: 90%;
-    background-color: var(--fixed-white);
+    background-color: var(--color-white);
     border-radius: var(--radius-1);
     padding: var(--paddingModal);
 }
 
-.addingValue {
-    font-size: var(--font-size-3);
-    font-weight: var(--font-weight-1);
-    color: var(--color-grey-1);
+.deleteBox {
+    width: 90%;
+}
+
+.editBox {
+    width: 90%;
+}
+
+.newDptBox {
+    width: 90%;
 }
 
 .dismissButton {
     border: none;
-    background-color: var(--fixed-white);
+    background-color: var(--color-white);
     cursor: pointer;
+    top: 1.3vh;
+    right: 0.8vw;
 }
 
-.messageModal {
-    font-size: var(--font-size-2);
-    font-weight: var(--font-weight-3);
-    color: var(--color-grey-2);
+.titleModal {
+    font-size: var(--font-size-7);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
 }
 
-.modalLabel {
+.deleteTitle {
+    font-size: var(--font-size-8);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
+    text-align: center;
+}
+
+.dptDesc {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
+}
+
+.companyName {
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-2);
-    color: var(--color-grey-1);
+    color: var(--color-black);
 }
 
-.inputValue {
-    width: 100%;
-    height: 50%;
-    padding: var(--paddingValueModal);
-    border: 1.5px solid var(--color-grey-3);
-    border-radius: var(--radius-1);
-    outline: none;
+.newWorker {
+    height: 4vh;
+    padding: var(--padingSelect);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black-opaque);
+    outline-style: var(--color-black-opaque);
+    color: var(--color-black-opaque);
+    text-align: center;
 }
 
-.inputValue:focus {
-    border: 1.5px solid var(--color-brand-1);
+.userSelect {
+    height: 5vh;
 }
 
-.inputValue::placeholder{
-    font-size: var(--font-size-2);
-    font-weight: var(--font-weight-3);
-    color: var(--color-grey-2);
+.dptSect {
+    width: 38%;
 }
 
-.inputValue::-webkit-outer-spin-button,
-.inputValue::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.getWorker {
+    width: 60%;
 }
 
-.modalButtons {
-    width: 47%;
-    background-color: var(--color-grey-4);
-    color: var(--color-grey-2);
+.hire {
+    align-self: flex-end;
+    background-color: var(--color-green);
+    border: 1px solid var(--color-green);
+    color: var(--color-white);
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-1);
-    border: 1.5px solid var(--color-grey-4);
-    border-radius: var(--radius-1);
-    padding: var(--paddingButtonModal);
+    padding: var(--paddingHire);
     cursor: pointer;
 }
 
-.cancelAdd:hover {
-    background-color: var(--color-grey-2);
-    color: var(--color-grey-4);
+.confirmDelete {
+    align-self: center;
+    width: 60%; 
 }
 
-.addModal {
-    background-color: var(--color-brand-1);
-    border: 1.5px solid var(--color-brand-1);
-    color: var(--fixed-white);
-}
-
-.addModal:hover {
-    background-color: var(--color-brand-2);
-    border: 1.5px solid var(--color-brand-2);
-}
-
-.inputType {
-    background-color: var(--fixed-white);
-    color: var(--color-grey-2);
+.confirmEdit {
+    background-color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+    color: var(--color-white);
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-1);
-    border: 1.5px solid var(--color-grey-5);
-    border-radius: var(--radius-1);
-    padding: var(--paddingButtonModal);
+    padding: var(--paddingHire);
+    cursor: pointer;
 }
 
-.inputType:focus {
-    background-color: var(--color-brand-3);
-    color: var(--color-brand-1);
-    border: 1.5px solid var(--color-brand-1);
+.workersList {
+    background-color: var(--color-white-grey);
+    padding: var(--paddingWorkersList);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.workerCard {
+    background-color: var(--color-white);
+    padding: var(--paddingWorkerCard);
+    width: 16vw;
+}
+
+.fireWorker {
+    align-self: center;
+    width: 60%;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-red);
+    color: var(--color-red);
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-1);
+    padding: var(--paddingHire);
+    cursor: pointer;
+}
+
+.editForm {
+    height: 60%;
+}
+
+.dptDescText {
+    height: 70%;
+    resize: none;
+    font-family: inherit;
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-2);
+    padding: var(--paddingEditText);
+}
+
+.newInput {
+    height: 19%;
+    font-family: inherit;
+    font-size: var(--font-size-1);
+    padding: var(--padingSelect);
+    border: 1px solid var(--color-black-opaque);
+    outline-style: var(--color-black-opaque);
+    color: var(--color-black-opaque);
 }
 
 @media (min-width: 700px) {
     .modalBox {
-        top: 10%;
-        left: 33%;
-        width: 33%;
-        padding: calc(var(--paddingModal) * 0.6);
-    }
-    
-    .addingValue {
-        font-size: calc(var(--font-size-3) * 0.6);
-    }
-    
-    .messageModal {
-        font-size: calc(var(--font-size-2) * 0.5);
-    }
-    
-    .typeModal {
-        flex-direction: row;
-        align-items: center;
+        top: 0;
+        left: 0;
+        width: 46%;
+        height: 51%;
     }
 
-    .modalLabel {
-        font-size: calc(var(--font-size-2) * 0.6);
-    }
-    
-    .inputValue {
-        width: 100%;
-        height: 50%;
-        padding: var(--paddingValueModal);
+    .deleteBox {
+        width: 46%;
+        height: 25%;
     }
 
-    .inputValue:hover {
-        border: 1.5px solid var(--color-brand-1);
+    .editBox {
+        width: 35%;
+        height: 42%;
     }
 
-    .inputValue::placeholder {
-        font-size: calc(var(--font-size-2) * 0.5);
-    }
-    
-    .containerModalButtons {
-        justify-content: end;
-        gap: var(--margin-2);
+    .newDptBox {
+        width: 40%;
     }
 
-    .modalButtons {
+    .editUser {
+        height: 36%;
         width: 30%;
-        font-size: calc(var(--font-size-2) * 0.5);
-        padding: var(--paddingButtonModalBigScreen);
     }
-    
-    .addModal {
-        border: 1.5px solid var(--color-brand-1);
-    }
-    
-    .inputType {
-        font-size: calc(var(--font-size-2) * 0.6);
-        padding: var(--paddingButtonModalBigScreen);
-    }
-    
-    .inputType:hover {
-        background-color: var(--color-brand-3);
-        color: var(--color-brand-1);
-        border: 1.5px solid var(--color-brand-1);
+    .editForm {
+        height: 70%;
     }
 }

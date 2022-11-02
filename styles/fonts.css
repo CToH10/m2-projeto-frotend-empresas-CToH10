@@ -67,5 +67,7 @@ h3 {
 }
 
 @media (min-width: 700px) {
-    
+    .companyTitle {
+        text-align: center;
+    }
 }

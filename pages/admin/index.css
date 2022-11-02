@@ -45,3 +45,61 @@ main {
     height: fit-content;
 }
 
+@media (min-width: 700px) {
+    header {
+        gap: 52%;
+    }
+
+    main {
+        left: 9vw;
+        width: 85%;
+    }
+
+    .departments {
+        margin-bottom: var(--margin-1);
+    }
+
+    .departmentsHeader {
+        grid-template-columns: fit-content(10vw) fit-content(10vw) 10vw;
+        justify-content: space-between;
+    }
+    
+    .departmentsHeader h3 {
+        grid-column: 1;
+        align-self: start;
+        width: fit-content;
+    }
+    
+    .departmentsHeader select {
+        grid-column: 2;
+        grid-row: 1;
+    }  
+    .departmentsHeader button {
+        grid-column: 3;
+    }
+    
+    .listDepartments, .allUsers {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: var(--margin-1);
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .listDepartments li, .allUsers li {
+        padding-top: 1vh;
+        background-color: var(--color-white);
+        min-width: 42%;
+    }
+
+    .interactDpt, .interactUser {
+        gap: 3%;
+    }
+
+    .hiredTitle {
+        text-align: center;
+    }
+
+}
+

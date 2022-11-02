@@ -97,5 +97,19 @@ button {
 
 
 @media (min-width: 700px) {
-    
+    .loginBtn, .homeBtn, .registerBtn {
+        max-height: 66%;
+    }
+
+    .open {
+        width: 10%;
+    }
+
+    .edit {
+        width: 8%;
+    }
+
+    .delete {
+        width: 6%;
+    }
 }

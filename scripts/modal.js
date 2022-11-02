@@ -13,6 +13,12 @@ export function editModal(classList) {
     let editForm    = document.createElement("form")
     let confirmEdit = document.createElement("button")
 
+    modalBox.classList = "modalBox editBox flexColumn justifyBetween relative"
+    closeModal.classList = "dismissButton absolute"
+    editTitle.classList = "titleModal marginBottom"
+    editForm.classList = "editForm flexColumn justifyBetween"
+    confirmEdit.classList = "confirmEdit"
+
     confirmEdit.type = "submit"
 
     editForm.addEventListener("submit", (event) => {
@@ -34,6 +40,8 @@ export function editModal(classList) {
         let hybrid     = document.createElement("option")
         let presential = document.createElement("option")
 
+        modalBox.classList.add("editUser")
+        kindOfWork.classList = "newWorker userSelect"
         kindOfWork.required = true
 
         selectKind.value = ""
@@ -53,6 +61,7 @@ export function editModal(classList) {
         let midLevel    = document.createElement("option")
         let senior      = document.createElement("option")
 
+        proLevel.classList = "newWorker userSelect"
         selectLevel.required = true 
 
         selectLevel.value = ""
@@ -77,7 +86,8 @@ export function editModal(classList) {
     } else {
         editTitle.innerText     = "Editar Departamento"
         confirmEdit.innerText   = "Editar o departamento"
-        let dptDescText         = document.createElement("input")
+        let dptDescText         = document.createElement("textarea")
+        dptDescText.classList   = "dptDescText"
         dptDescText.placeholder = "valores anteriores"
         editForm.append(dptDescText, confirmEdit)
     }
@@ -91,6 +101,11 @@ export function deleteModal(classList) {
     let closeModal    = document.createElement("button")
     let deleteTitle   = document.createElement("h2")
     let confirmDelete = document.createElement("button")
+
+    modalBox.classList = "modalBox deleteBox flexColumn justifyAround alignCenter gap-1 relative"
+    closeModal.classList = "dismissButton absolute"
+    deleteTitle.classList = "deleteTitle"
+    confirmDelete.classList = "hire confirmDelete"
 
     confirmDelete.type = "submit"
     confirmDelete.innerText = "Deletar"
@@ -124,19 +139,29 @@ export function newDepartment() {
     let selectCompany   = document.createElement("option")
     let confirmCreation = document.createElement("button")
 
+    modalBox.classList        = "modalBox newDptBox flexColumn justifyBetween relative"
+    closeModal.classList      = "dismissButton absolute"
+    newDptTitle.classList     = "titleModal marginBottom"
+    creationForm.classList    = "editForm flexColumn justifyBetween"
+    dptName.classList         = "newInput"
+    dptDesc.classList         = "newInput"
+    company.classList         = "newInput"
+    confirmCreation.classList = "confirmEdit"
+
+    dptName.placeholder       = "Nome do departamento"
+    dptDesc.placeholder       = "Descrição"
+    newDptTitle.innerText     = "Criar departamento"
+    selectCompany.innerText   = "Selecionar empresa"
+    confirmCreation.innerText = "Criar o departamento"
+
+    dptName.required = true
+    company.required = true
 
     closeModal.innerText = "X"
     closeModal.addEventListener("click", ()=> {
         modalSect.remove()
     })
 
-    dptName.placeholder       = "Nome do departamento"
-    dptDesc.placeholder       = "Descrição"
-    selectCompany.innerText   = "Selecionar empresa"
-    confirmCreation.innerText = "Criar o departamento"
-
-    dptName.required = true
-    company.required = true
 
     modalSect.appendChild(modalBox)
     modalBox.append(closeModal, newDptTitle, creationForm)
@@ -147,42 +172,61 @@ export function newDepartment() {
 }
 
 export function viewDepartment() {
-    let modalSect = modal()
-    let modalBox    = document.createElement("section")
-    let closeModal = document.createElement("button")
-    let dptTitle     = document.createElement("h2")
-    let dptId = document.createElement("section")
-    let dptSect = document.createElement("section")
-    let dptDesc = document.createElement("h3")
-    let companyName = document.createElement("p")
-    let getWorker = document.createElement("section")
-    let newWorker = document.createElement("select")
-    let selectWorker = document.createElement("option")
-    let hire = document.createElement("button")
-    let workersList = document.createElement("ul")
-    let workerCard = document.createElement("li")
-    let workerInfo = document.createElement("section")
-    let workerName = document.createElement("h3")
-    let workerLevel = document.createElement("p")
+    let modalSect     = modal()
+    let modalBox      = document.createElement("section")
+    let closeModal    = document.createElement("button")
+    let dptTitle      = document.createElement("h2")
+    let dptId         = document.createElement("section")
+    let dptSect       = document.createElement("section")
+    let dptDesc       = document.createElement("h3")
+    let companyName   = document.createElement("p")
+    let getWorker     = document.createElement("section")
+    let newWorker     = document.createElement("select")
+    let selectWorker  = document.createElement("option")
+    let hire          = document.createElement("button")
+    let workersList   = document.createElement("ul")
+    let workerCard    = document.createElement("li")
+    let workerInfo    = document.createElement("section")
+    let workerName    = document.createElement("h3")
+    let workerLevel   = document.createElement("p")
     let workerCompany = document.createElement("p")
-    let fireWorker = document.createElement("button")
+    let fireWorker    = document.createElement("button")
+
+    modalBox.classList = "modalBox relative"
+    closeModal.classList = "dismissButton absolute"
+    dptId.classList = "dptId flex justifyBetween marginBottom"
+    getWorker.classList = "getWorker flexColumn gap-1"
+    dptSect.classList = "dptSect"
+    dptTitle.classList = "titleModal marginBottom"
+    dptDesc.classList = "dptDesc"
+    hire.classList = "hire"
+    newWorker.classList = "newWorker"
+    companyName.classList = "companyName"
+    workerName.classList = "dptDesc"
+    workerLevel.classList = "companyName"
+    workerCompany.classList = "companyName"
+    workersList.classList = "workersList flex"
+    workerCard.classList = "workerCard flexColumn gap-1"
+    workerInfo.classList = "workerInfo flexColumn gap-2"
+    fireWorker.classList = "fireWorker"
 
     modalBox.append(closeModal, dptTitle, dptId, workersList)
     dptId.append(dptSect, getWorker)
     dptSect.append(dptDesc, companyName)
     getWorker.append(newWorker, hire)
     newWorker.appendChild(selectWorker)
-    workersList.append(workerCard, fireWorker)
-    workerCard.appendChild(workerInfo)
+    workersList.appendChild(workerCard)
+    workerCard.append(workerInfo, fireWorker)
     workerInfo.append(workerName, workerLevel, workerCompany)
 
     dptTitle.innerText = "Nome do departamento"
     dptDesc.innerText = "Descrição"
     companyName.innerText = "Nome da empresa"
     selectWorker.innerText = "Selecionar usuário"
+    hire.innerText = "Contratar"
     workerName.innerText = "Nome de usuário"
     workerLevel.innerText = "Pleno"
-    workerLevel.innerText = "Company name"
+    workerCompany.innerText = "Company name"
     fireWorker.innerText = "Desligar"
 
     getWorker.type = "submit"

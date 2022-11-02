@@ -30,3 +30,41 @@ main {
 .allUsers li {
     width: 65%;
 }
+
+@media (min-width: 700px) {
+    header {
+        gap: 52%;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-around;
+        gap: var(--margin-2);
+        top: 20vh;
+        left: 29%;
+    }
+
+    .pageLogo {
+        padding-left: 2vw;
+    }
+
+    .dropdownBtn {
+        display: none;
+    }
+
+    .formsBtn {
+        display: flex;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 20vw;
+        height: 7vh;
+        background-color: var(--color-white);
+        box-shadow: none;
+        z-index: 3;
+    }
+
+    .login {
+        width: 40vw;
+    }
+}

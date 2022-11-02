@@ -27,7 +27,6 @@ header {
     padding: var(--paddingFormButtons);
     overflow-x: scroll;
     width: 90vw;
-    /* height: 32vh; */
 }
 
 .listCoworkers li {
@@ -38,5 +37,42 @@ header {
 }
 
 @media (min-width: 700px) {
-    
+    header {
+        gap: 52%;
+    }
+
+    main {
+        left: 7.5vw;
+        width: 85vw;
+    }
+
+    .listCoworkers {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 85vw;
+    }
+
+    .listCoworkers li {
+        min-width: 30%;
+    }
+
+    .user {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .userId {
+        width: 60%;
+    }
+
+    .edit {
+        width: 3%;
+    }
+
+    .userInfo {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }

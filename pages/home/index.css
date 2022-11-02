@@ -19,6 +19,7 @@ main {
 
 .companiesList {
     overflow-x: scroll;
+    background-color: var(--color-white-grey);
 }
 
 .company {
@@ -32,4 +33,67 @@ main {
 
 .enterName, .companyInfo {
     padding-left: var(--paddingInfoLeft);
+}
+
+
+@media (min-width: 700px) {
+    header {
+        gap: 52%;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-around;
+        gap: var(--margin-2);
+    }
+
+    .pageLogo {
+        padding-left: 2vw;
+    }
+
+    .dropdownBtn {
+        display: none;
+    }
+
+    .formsBtn {
+        display: flex;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 20vw;
+        height: 7vh;
+        background-color: var(--color-white);
+        box-shadow: none;
+        z-index: 3;
+    } 
+
+    .imageSection {
+        display:block;
+        height: 80vh;
+        object-fit: contain;
+    }
+
+    .imageSection figure, .imageSection img {
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .selection {
+        max-width: 45%;
+        height: 80vh;
+    }
+
+    .companiesList {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--margin-1);
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .companiesList li {
+        padding-top: 1vh;
+        background-color: var(--color-white);
+        min-width: 90%;
+    }
 }
