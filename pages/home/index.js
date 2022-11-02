@@ -1,11 +1,21 @@
 import { listCompanies, listSectors } from "../../scripts/api.js"
 import { dropdown } from "../../scripts/dropdown.js"
 
-const dropdownBtn = document.querySelector(".dropdownBtn")
+const dropdownBtn   = document.querySelector(".dropdownBtn")
+const loginBtn      = document.querySelector(".loginBtn")
+const registerBtn   = document.querySelector(".registerBtn")
 const enterprises   = document.querySelector(".enterprises")
 const companiesList = document.querySelector(".companiesList")
 
 dropdownBtn.addEventListener("click", dropdown)
+loginBtn.addEventListener("click", () => {
+    window.location.href = "../login"
+})
+
+registerBtn.addEventListener("click", () => {
+    window.location.href = "../register"
+})
+
 let allSectors   = await listSectors()
 let allCompanies = await listCompanies()
 

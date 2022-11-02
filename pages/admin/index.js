@@ -7,9 +7,6 @@ const createEnterprise = document.querySelector(".newDpt")
 const selectCompany    = document.querySelector(".selectCompany")
 const listDepartments  = document.querySelector(".listDepartments")
 const allUsers         = document.querySelector(".allUsers")
-let viewBtn            = document.querySelectorAll(".open")
-let deleteBtn          = document.querySelectorAll(".delete")
-let editBtn            = document.querySelectorAll(".edit")
 let token              = JSON.parse(localStorage.getItem("token"))
 
 let companiesList   = await listCompanies()
@@ -76,6 +73,10 @@ logout.addEventListener("click", () => {
 createEnterprise.addEventListener("click", () => {
     body.append(newDepartment())
 })
+
+let viewBtn   = document.querySelectorAll(".open")
+let deleteBtn = document.querySelectorAll(".delete")
+let editBtn   = document.querySelectorAll(".edit")
 
 viewBtn.forEach((btn) => {
     btn.addEventListener("click", ()=> {
