@@ -7,7 +7,8 @@ const homeBtn     = document.querySelector(".homeBtn")
 const registerBtn = document.querySelector(".registerBtn")
 const goBackBtn   = document.querySelector(".goBack")
 const loginForm   = document.querySelector("form")
-const submitForm   = document.querySelector(".submitForm")
+const submitForm  = document.querySelector(".submitForm")
+const emailInput  = document.querySelector("#email")
 
 
 dropdownBtn.addEventListener("click", dropdown)
@@ -35,7 +36,7 @@ loginForm.addEventListener("submit", async (event) =>{
     let loginResult = await login(formBody)
     let admin       = await isAdmin(loginResult.token)
     localStorage.setItem("token", JSON.stringify(loginResult.token))
-
+    console.log(loginResult)
     if (loginResult.token) {
         if (admin.is_admin) {
             window.location.href = "../admin"
@@ -44,7 +45,16 @@ loginForm.addEventListener("submit", async (event) =>{
         }
         
     } else {
+        let message = loginResult.error
+        message = message.charAt(0).toUpperCase() + message.slice(1)
+        submitForm.classList.add("redForm")
         submitForm.replaceChildren()
-        submitForm.innerText = "Login"
+        submitForm.innerText = message
+
+        emailInput.addEventListener("input", () => {
+            submitForm.classList.remove("redForm")
+            submitForm.replaceChildren()
+            submitForm.innerText = "Login"
+        })
     }
 })
