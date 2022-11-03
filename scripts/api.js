@@ -125,3 +125,19 @@ export async function userInfo(token) {
         console.log(err)
     }
 }
+
+export async function coworkers(token) {
+    try { let list = await fetch(`${baseUrl}users/departments/coworkers`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+
+    let listJson = await list.json()
+    console.log(listJson)
+    return listJson
+
+    } catch (err) {
+        console.log(err)
+    }
+}
