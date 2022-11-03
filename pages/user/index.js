@@ -1,5 +1,6 @@
 import { editProfile } from "../../scripts/modal.js"
-import { coworkers, userInfo } from "../../scripts/api.js"
+import { companiesBySector, coworkers, userInfo } from "../../scripts/api.js"
+import { makeProfile } from "../../scripts/user.js"
 
 
 const body          = document.querySelector("body")
@@ -12,8 +13,12 @@ const kindWork      = document.querySelector(".kind_of_work")
 const companyTitle  = document.querySelector(".companyTitle")
 const listCoworkers = document.querySelector(".listCoworkers")
 let token           = JSON.parse(localStorage.getItem("token"))
+let userProfile     = await userInfo(token)
+
 
 let coworkersList   = await coworkers(token)
+let companiesList   = await companiesBySector()
+let currentCompany  = companiesList.filter((comp) => comp.uuid == coworkersList[0].company_uuid)
 
 if (window.location.href.includes("user")) {
 
@@ -29,36 +34,29 @@ if (window.location.href.includes("user")) {
 }
 
 function populateList() {
-    if (coworkersList.length == 0) {
+    if (coworkersList[0].company_uuid == null) {
         companyTitle.innerText = ""
         listCoworkers.replaceChildren()
         listCoworkers.insertAdjacentHTML("afterbegin", `
         <h2 class="notHired">Você ainda não foi contratado</h2>
         `)
     } else {
+        companyTitle.innerText = `${currentCompany[0].name} - ${coworkersList[0].name}`
+        coworkersList = coworkersList[0].users
+        listCoworkers.replaceChildren()
         coworkersList.forEach((person) => {
-            listCoworkers.insertAdjacentHTML("beforeend", `
-            <li>
-            <h3 class="coworkerName marginBottom">${person.users.username}</h3>
-            <p class="coworkerLevel">${person.users.kind_of_work}</p>
-            </li>
-            `)
+            if (person.username != userProfile.username) {
+                let workFrom = person.kind_of_work
+                workFrom     = workFrom.charAt(0).toUpperCase() + workFrom.slice(1)
+                listCoworkers.insertAdjacentHTML("beforeend", `
+                <li>
+                <h3 class="coworkerName marginBottom">${person.username}</h3>
+                <p class="coworkerLevel">${workFrom}</p>
+                </li>
+                `)
+            }
         })
     }
-}
-
-export async function makeProfile() {
-    let userProfile     = await userInfo(token)
-    let proLevel        = userProfile.professional_level
-    proLevel            = proLevel.charAt(0).toUpperCase() + proLevel.slice(1)
-    
-    document.title      = userProfile.username
-
-    userName.innerText  = userProfile.username
-    userEmail.innerText = userProfile.email
-    userLevel.innerText = proLevel
-    kindWork.innerText  = userProfile.kind_of_work
-
 }
 
 makeProfile()

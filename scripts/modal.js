@@ -1,5 +1,5 @@
-import { listingUsers, listTheCompanies } from "../pages/admin/index.js"
-import { adminEditUser, companiesBySector, createDpt, deleteDpt, deleteUser, editUser, fireWorkerDpt, hireWorker, outOfWork } from "./api.js"
+import { listingUsers, listTheCompanies } from "./admin.js"
+import { adminEditUser, companiesBySector, createDpt, deleteDpt, deleteUser, editDptDesc, editUser, fireWorkerDpt, hireWorker, outOfWork } from "./api.js"
 import { getValues } from "./inputs.js"
 
 function modal() {
@@ -9,13 +9,14 @@ function modal() {
     return modal
 }
 
-export function editModal(classList, token, id) {
+export function editModal(btn, token, id) {
     let modalSect   = modal()
     let modalBox    = document.createElement("section")
     let closeModal  = document.createElement("button")
     let editTitle   = document.createElement("h2")
     let editForm    = document.createElement("form")
     let confirmEdit = document.createElement("button")
+    let classList   = btn.classList
 
     modalBox.classList    = "modalBox editBox flexColumn justifyBetween relative"
     closeModal.classList  = "dismissButton absolute"
@@ -106,12 +107,22 @@ export function editModal(classList, token, id) {
         })
 
     } else {
-        editTitle.innerText     = "Editar Departamento"
-        confirmEdit.innerText   = "Editar o departamento"
-        let dptDescText         = document.createElement("textarea")
-        dptDescText.classList   = "dptDescText"
-        dptDescText.placeholder = "valores anteriores"
+        let previousDesc      = btn.parentElement.parentElement.children[0].children[1].innerText
+        editTitle.innerText   = "Editar Departamento"
+        confirmEdit.innerText = "Editar o departamento"
+        let dptDescText       = document.createElement("textarea")
+        dptDescText.classList = "dptDescText"
+        dptDescText.value     = previousDesc
+        dptDescText.id        = "description"
         editForm.append(dptDescText, confirmEdit)
+
+        editForm.addEventListener("submit", (event) => {
+            event.preventDefault()
+            let body = getValues(editForm.elements)
+            editDptDesc(token, id, body)
+            listTheCompanies()
+            modalSect.remove()
+        })
     }
 
 

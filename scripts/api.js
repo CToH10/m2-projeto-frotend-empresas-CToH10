@@ -3,8 +3,6 @@ let headers   = {
     "Content-Type": "application/json"
 }
 
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNjA4MjNjMjgtMmE5Zi00YTg2LTg1MTUtNmIzZmZiOTEzZDRiIiwiaXNfYWRtaW4iOnRydWUsImlhdCI6MTY2NzQwMTE0NCwiZXhwIjoxNjY4MjY1MTQ0LCJzdWIiOiJbb2JqZWN0IFVuZGVmaW5lZF0ifQ.50sb6oyx9nqB750vkJ-QuGQ6pD_2ilPFTdQSWJ7m-20"
-
 export async function createUser(body) {
     try { let create = await fetch(`${baseUrl}auth/register`,{
         method: "POST",
@@ -63,6 +61,11 @@ export async function companiesBySector(sector = "") {
 }
 
 export async function listAllDepartments(token, id = "") {
+    let preventUser = await isAdmin(token)
+    if (preventUser.is_admin == false) {
+        return
+    } 
+    
     try { let departments = await fetch(`${baseUrl}departments/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`
@@ -269,6 +272,25 @@ export async function fireWorkerDpt(token, id) {
                 Authorization: `Bearer ${token}`
             }
         })
+    } catch (err) {
+        return (err)
+    }
+}
+
+export async function editDptDesc(token, id, body) {
+    try {
+        let newDesc = await fetch(`${baseUrl}departments/${id}`, {
+            method: "PATCH",
+            headers: {
+                ...headers,
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(body)
+        })
+
+        let newDescJson = await newDesc.json()
+
+        return newDescJson
     } catch (err) {
         return (err)
     }
