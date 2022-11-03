@@ -61,6 +61,7 @@ selectCompany.addEventListener("change", async () => {
         </li>
         `)
     })
+    getButtons(listDepartments)
 })
 
 logout.addEventListener("click", () => {

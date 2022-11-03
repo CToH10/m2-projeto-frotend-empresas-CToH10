@@ -17,7 +17,7 @@ export async function createUser(body) {
     return createJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -34,7 +34,7 @@ export async function login(body) {
     return loginJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -48,7 +48,7 @@ export async function isAdmin(token) {
     return adminJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -58,7 +58,7 @@ export async function companiesBySector(sector = "") {
 
         return compSJson
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -73,7 +73,7 @@ export async function listAllDepartments(token, id = "") {
     return departmentsJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -89,7 +89,7 @@ export async function listUsers(token) {
     return usersJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -101,7 +101,7 @@ export async function listSectors() {
     return sectorsJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -117,7 +117,7 @@ export async function userInfo(token) {
     return userJson
         
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -133,7 +133,7 @@ export async function coworkers(token) {
     return listJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -151,7 +151,7 @@ export async function editUser(body, token) {
         return editJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -165,7 +165,7 @@ export async function deleteUser(token, id) {
         let eraseJson = erase.status
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -184,7 +184,7 @@ export async function adminEditUser(token, body, id) {
         return updatedJson
 
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -200,7 +200,7 @@ export async function outOfWork(token) {
     return unemployedJson
     
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -223,7 +223,7 @@ export async function deleteDpt(token, id) {
         })
         
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -240,7 +240,7 @@ export async function createDpt(token, body) {
 
         let newDptResponse = await newDpt.json()
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -257,7 +257,7 @@ export async function hireWorker(token, body) {
 
         let newHireJson = await newHire.json()
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }
 
@@ -270,6 +270,6 @@ export async function fireWorkerDpt(token, id) {
             }
         })
     } catch (err) {
-        console.log(err)
+        return (err)
     }
 }

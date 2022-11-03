@@ -8,6 +8,7 @@ const loginBtn     = document.querySelector(".registerBtn")
 const goBackBtn    = document.querySelector(".goBack")
 const registerForm = document.querySelector("form")
 const submitForm   = document.querySelector(".submitForm")
+const emailInput   = document.querySelector("#email")
 
 dropdownBtn.addEventListener("click", dropdown)
 
@@ -30,8 +31,23 @@ registerForm.addEventListener("submit", async (event) =>{
 
     let formBody = getValues(registerForm.elements)
 
-    await createUser(formBody)
+    let formSucces = await createUser(formBody)
 
-    submitForm.replaceChildren()
-    submitForm.innerText = "Cadastre-se"
+    if(formSucces.error) {
+        let message = formSucces.error[0]
+        message = message.charAt(0).toUpperCase() + message.slice(1)
+        submitForm.classList.add("redForm")
+        submitForm.replaceChildren()
+        submitForm.innerText = message
+
+        emailInput.addEventListener("input", () => {
+            submitForm.classList.remove("redForm")
+            submitForm.replaceChildren()
+            submitForm.innerText = "Cadastre-se"
+        })
+
+    } else {
+        window.location.href = "../login"
+    }
+
 })
