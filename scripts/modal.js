@@ -72,19 +72,19 @@ export function editModal(classList, token, id) {
         proLevel.classList = "newWorker userSelect proLevel"
 
         proLevel.id    = "professional_level"
-        trainee.id     = "estagiário"
+        trainee.id     = "estágio"
         junior.id      = "júnior"
         midLevel.id    = "pleno"
         senior.id      = "sênior"
 
         selectLevel.value = ""
-        trainee.value     = "estagiário"
+        trainee.value     = "estágio"
         junior.value      = "júnior"
         midLevel.value    = "pleno"
         senior.value      = "sênior"
 
         selectLevel.innerText = "Selecionar nível profissional"
-        trainee.innerText     = "Estagiário"
+        trainee.innerText     = "Estágio"
         junior.innerText      = "Júnior"
         midLevel.innerText    = "Pleno"
         senior.innerText      = "Sênior"
