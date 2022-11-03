@@ -19,8 +19,12 @@ export async function makeProfile() {
     let userProfile = await userInfo(token)
     let proLevel    = userProfile.professional_level
     let workFrom    = userProfile.kind_of_work
-    proLevel        = proLevel.charAt(0).toUpperCase() + proLevel.slice(1)
-    workFrom        = workFrom.charAt(0).toUpperCase() + workFrom.slice(1)
+    if (proLevel != null) {
+        proLevel        = proLevel.charAt(0).toUpperCase() + proLevel.slice(1)
+    }
+    if (workFrom != null) {
+        workFrom        = workFrom.charAt(0).toUpperCase() + workFrom.slice(1)
+    }
     
     document.title  = userProfile.username
 

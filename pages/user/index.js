@@ -18,7 +18,10 @@ let userProfile     = await userInfo(token)
 
 let coworkersList   = await coworkers(token)
 let companiesList   = await companiesBySector()
-let currentCompany  = companiesList.filter((comp) => comp.uuid == coworkersList[0].company_uuid)
+let currentCompany
+if (coworkersList.length != 0) {
+    currentCompany  = companiesList.filter((comp) => comp.uuid == coworkersList[0].company_uuid)
+}
 
 if (window.location.href.includes("user")) {
 
@@ -34,7 +37,7 @@ if (window.location.href.includes("user")) {
 }
 
 function populateList() {
-    if (coworkersList[0].company_uuid == null) {
+    if (coworkersList.length == 0 || coworkersList[0].company_uuid == null) {
         companyTitle.innerText = ""
         listCoworkers.replaceChildren()
         listCoworkers.insertAdjacentHTML("afterbegin", `

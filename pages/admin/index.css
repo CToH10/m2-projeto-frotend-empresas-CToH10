@@ -42,7 +42,14 @@ main {
     background-color: var(--color-white);
     border-bottom: 1px solid var(--color-blue);
     padding: var(--paddingDptId);
-    height: fit-content;
+    min-width: fit-content;
+    min-height: 90%;
+    
+}
+
+.allUsers li {
+    min-height: fit-content;
+    min-width: 42vw;
 }
 
 @media (min-width: 700px) {
@@ -90,8 +97,9 @@ main {
     .listDepartments li, .allUsers li {
         padding-top: 1vh;
         background-color: var(--color-white);
-        min-width: 42%;
+        min-width: 38%;
         max-width: 42%;
+        min-height: fit-content;
     }
 
     .interactDpt, .interactUser {

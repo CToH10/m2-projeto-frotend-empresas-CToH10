@@ -7,8 +7,8 @@
 }
 
 .modalBox {
-    top: 6vh;
-    left: 5vw;
+    top: 0vh;
+    left: 0vw;
     width: 90%;
     background-color: var(--color-white);
     border-radius: var(--radius-1);
@@ -184,5 +184,25 @@
     }
     .editForm {
         height: 70%;
+    }
+}
+
+@media (max-width: 699px) {
+    .dptId {
+        flex-direction: column;
+    }
+    .dptSect, .getWorker {
+        width: 100%;
+    }
+    .newWorker {
+        height: min-content;
+    }
+
+    .workerCard {
+        min-width: 42vw;
+    }
+
+    .modalBox form {
+        height: 60vw;
     }
 }

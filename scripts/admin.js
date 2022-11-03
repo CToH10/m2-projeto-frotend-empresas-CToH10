@@ -35,7 +35,7 @@ export async function listingUsers() {
                 professional = ""
             }
         allUsers.insertAdjacentHTML("beforeend", `
-            <li name="${elem.uuid}">
+            <li name="${elem.uuid}" class="flexColumn justifyBetween">
                 <section class="userId marginBottom">
                     <h3 class="userName">${elem.username}</h3>
                     <p class="userLevel">${professional}</p>
@@ -88,7 +88,7 @@ export async function listTheCompanies() {
     listDepartments.replaceChildren()
     departmentsList.forEach((elem) => {
         listDepartments.insertAdjacentHTML("beforeend", `
-        <li name="${elem.uuid}">
+        <li name="${elem.uuid}" class="flexColumn justifyBetween">
             <section class="dptId marginBottom">
                 <h3 class="dptName">${elem.name}</h3>
                 <p class="dptDescription">${elem.description}</p>
