@@ -10,6 +10,5 @@ export function getValues(elements) {
             apiBody[element.id] = element.value
         }
     }) 
-
     return apiBody
 }

@@ -15,19 +15,17 @@ let token           = JSON.parse(localStorage.getItem("token"))
 
 let coworkersList   = await coworkers(token)
 
-if (logout) {
+if (window.location.href.includes("user")) {
+
     logout.addEventListener("click", () => {
         localStorage.clear()
         window.location.href = "../home"
     })
-
-}
-
-if (editBtn) {
+    
+    
     editBtn.addEventListener("click", () => {
         body.append(editProfile(token))
     })
-
 }
 
 function populateList() {

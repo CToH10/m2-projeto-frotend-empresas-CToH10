@@ -62,7 +62,7 @@ export async function companiesBySector(sector = "") {
     }
 }
 
-export async function listAllDepartments() {
+export async function listAllDepartments(token) {
     try { let departments = await fetch(`${baseUrl}departments`, {
         headers: {
             Authorization: `Bearer ${token}`
@@ -77,7 +77,7 @@ export async function listAllDepartments() {
     }
 }
 
-export async function listUsers() {
+export async function listUsers(token) {
     try { let users = await fetch(`${baseUrl}users`,{
         headers: {
             Authorization: `Bearer ${token}`
@@ -85,8 +85,6 @@ export async function listUsers() {
     })
 
     let usersJson = await users.json()
-
-    // console.log(usersJson)
 
     return usersJson
 
@@ -157,3 +155,108 @@ export async function editUser(body, token) {
     }
 }
 
+export async function deleteUser(token, id) {
+    try { let erase = await fetch(`${baseUrl}admin/delete_user/${id}`, {
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+        let eraseJson = erase.status
+
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export async function adminEditUser(token, body, id) {
+    try {
+        let updated = await fetch(`${baseUrl}admin/update_user/${id}`, {
+            method: "PATCH", 
+            headers: {
+                ...headers,
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(body)
+        })
+        let updatedJson = await updated.json()
+
+        return updatedJson
+
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export async function outOfWork(token) {
+    try { let unemployed = await fetch(`${baseUrl}admin/out_of_work`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+
+    })
+    let unemployedJson = unemployed.json()
+
+    return unemployedJson
+    
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export async function employedDpt(token, id) {
+    let allUsers = await listUsers(token)
+    let found = allUsers.filter((user) => 
+        user.department_uuid == id
+    )
+
+    return found
+}
+
+export async function deleteDpt(token, id) {
+    try {
+        let byeDpt = await fetch(`${baseUrl}departments/${id}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export async function createDpt(token, body) {
+    try {
+        let newDpt = await fetch(`${baseUrl}departments`, {
+            method: "POST",
+            headers: {
+                ...headers,
+                Authorization: `Bearer ${token}`
+            }, 
+            body: JSON.stringify(body)
+        })
+
+        let newDptResponse = await newDpt.json()
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export async function hireWorker(token, body) {
+    try {
+        let newHire = await fetch(`${baseUrl}departments/hire`, {
+            method: "PATCH", 
+            headers: {
+                ...headers,
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(body)
+        })
+
+        let newHireJson = await newHire.json()
+    } catch (err) {
+        console.log(err)
+    }
+}
