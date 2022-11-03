@@ -15,16 +15,20 @@ let token           = JSON.parse(localStorage.getItem("token"))
 
 let coworkersList   = await coworkers(token)
 
+if (logout) {
+    logout.addEventListener("click", () => {
+        localStorage.clear()
+        window.location.href = "../home"
+    })
 
+}
 
-logout.addEventListener("click", () => {
-    localStorage.clear()
-    window.location.href = "../home"
-})
+if (editBtn) {
+    editBtn.addEventListener("click", () => {
+        body.append(editProfile(token))
+    })
 
-editBtn.addEventListener("click", () => {
-    body.append(editProfile(token))
-})
+}
 
 function populateList() {
     if (coworkersList.length == 0) {

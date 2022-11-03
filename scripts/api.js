@@ -52,13 +52,11 @@ export async function isAdmin(token) {
     }
 }
 
-export async function listCompanies() {
-    try { let companies = await fetch(`${baseUrl}companies`)
+export async function companiesBySector(sector = "") {
+    try { let compSector = await fetch(`${baseUrl}companies/${sector}`)
+        let compSJson = await compSector.json()
 
-    let companiesJson = await companies.json()
-
-    return companiesJson
-
+        return compSJson
     } catch (err) {
         console.log(err)
     }
@@ -158,3 +156,4 @@ export async function editUser(body, token) {
         console.log(err)
     }
 }
+

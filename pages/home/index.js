@@ -1,4 +1,4 @@
-import { listCompanies, listSectors } from "../../scripts/api.js"
+import { companiesBySector, listSectors } from "../../scripts/api.js"
 import { dropdown } from "../../scripts/dropdown.js"
 
 const dropdownBtn   = document.querySelector(".dropdownBtn")
@@ -17,7 +17,7 @@ registerBtn.addEventListener("click", () => {
 })
 
 let allSectors   = await listSectors()
-let allCompanies = await listCompanies()
+let allCompanies = await companiesBySector()
 
 allSectors.forEach((sector) => {
     enterprises.insertAdjacentHTML("beforeend", `
@@ -25,6 +25,26 @@ allSectors.forEach((sector) => {
     `)
 })
 
+enterprises.addEventListener("change", async () => {
+    let value = enterprises.options[enterprises.selectedIndex].value
+    let list  = await companiesBySector(value)
+    companiesList.replaceChildren()
+    list.forEach((comp) => {
+        let horas = comp.opening_hours.slice(0, 2) + " horas"
+    
+        companiesList.insertAdjacentHTML("beforeend", `
+        <li class="company flexColumn justifyBetween" name="${comp.uuid}">
+            <h3 class="enterName">${comp.name}</h3>
+            <section class="companyInfo flexColumn gap-2">
+                <p class="openHours">${horas}</p>
+                <p class="sectorSelect marginBottom">${comp.sectors.description}</p>
+            </section>
+        </li class="company flexColumn gap-2">
+        `)
+    })
+})
+
+// let value = enterprises.options[enterprises.selectedIndex].value
 allCompanies.forEach((comp) => {
     let horas = comp.opening_hours.slice(0, 2) + " horas"
 

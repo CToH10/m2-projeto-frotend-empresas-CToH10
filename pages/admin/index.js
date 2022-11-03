@@ -1,4 +1,4 @@
-import { listCompanies, listAllDepartments, listUsers } from "../../scripts/api.js"
+import { listCompanies, listAllDepartments, listUsers, coworkers } from "../../scripts/api.js"
 import { deleteModal, editModal, newDepartment, viewDepartment } from "../../scripts/modal.js"
 
 const body             = document.querySelector("body")
@@ -12,6 +12,8 @@ let token              = JSON.parse(localStorage.getItem("token"))
 let companiesList   = await listCompanies()
 let departmentsList = await listAllDepartments()
 let usersList       = await listUsers()
+
+let cleanList = await coworkers(token)
 
 companiesList.forEach((elem) => {
     selectCompany.insertAdjacentHTML("beforeend", `
