@@ -77,6 +77,11 @@ ul {
   z-index: 3;
 }
 
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media (min-width: 700px) {
   :root {
     --paddingNavBtn: 1vh 1vw ;
