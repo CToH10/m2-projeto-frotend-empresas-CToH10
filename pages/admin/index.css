@@ -1,0 +1,114 @@
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 7vh;
+    box-shadow: var(--shadow);
+    background-color: var(--color-white);
+}
+
+main {
+    top: 15vh;
+    left: 1vw;
+}
+
+.listDepartments, .allUsers {
+    background-color: var(--color-white-grey);
+    padding: var(--paddingFormButtons);
+    overflow-x: scroll;
+    width: 90vw;
+    height: 32vh;
+}
+
+.allUsers {
+    height: 29vh;
+}
+
+.departmentsHeader {
+    grid-template-columns: auto auto;
+    row-gap: calc(var(--margin-2) * 2);
+}
+
+.departmentsHeader h3 {
+    align-self: center;
+}
+
+.departmentsHeader select {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+
+.listDepartments li, .allUsers li {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-blue);
+    padding: var(--paddingDptId);
+    min-width: fit-content;
+    min-height: 90%;
+    
+}
+
+.allUsers li {
+    min-height: fit-content;
+    min-width: 42vw;
+}
+
+@media (min-width: 700px) {
+    header {
+        gap: 52%;
+    }
+
+    main {
+        left: 9vw;
+        width: 85%;
+    }
+
+    .departments {
+        margin-bottom: var(--margin-1);
+    }
+
+    .departmentsHeader {
+        grid-template-columns: fit-content(10vw) fit-content(10vw) 10vw;
+        justify-content: space-between;
+    }
+    
+    .departmentsHeader h3 {
+        grid-column: 1;
+        align-self: start;
+        width: fit-content;
+    }
+    
+    .departmentsHeader select {
+        grid-column: 2;
+        grid-row: 1;
+    }  
+    .departmentsHeader button {
+        grid-column: 3;
+    }
+    
+    .listDepartments, .allUsers {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: var(--margin-1);
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    .listDepartments li, .allUsers li {
+        padding-top: 1vh;
+        background-color: var(--color-white);
+        min-width: 38%;
+        max-width: 42%;
+        min-height: fit-content;
+    }
+
+    .interactDpt, .interactUser {
+        gap: 3%;
+    }
+
+    .hiredTitle {
+        text-align: center;
+    }
+
+}
+

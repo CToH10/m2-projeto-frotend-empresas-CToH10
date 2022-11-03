@@ -1,0 +1,78 @@
+main {
+    top: 10vh;
+    left: 5vw;
+    width: 90vw;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 7vh;
+    box-shadow: var(--shadow);
+    background-color: var(--color-white);
+}
+
+.companyId {
+    background-color: var(--color-blue);
+}
+
+.user {
+    border: 1px solid var(--color-black-opaque);
+    padding: var(--paddingFormInput);
+}
+
+.listCoworkers {
+    background-color: var(--color-white-grey);
+    padding: var(--paddingFormButtons);
+    overflow-x: scroll;
+    width: 90vw;
+}
+
+.listCoworkers li {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-blue);
+    padding: var(--paddingDptId) ;
+    min-width: 47%;
+}
+
+@media (min-width: 700px) {
+    header {
+        gap: 52%;
+    }
+
+    main {
+        left: 7.5vw;
+        width: 85vw;
+    }
+
+    .listCoworkers {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+        width: 85vw;
+    }
+
+    .listCoworkers li {
+        min-width: 30%;
+    }
+
+    .user {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .userId {
+        width: 60%;
+    }
+
+    .edit {
+        width: 3%;
+    }
+
+    .userInfo {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

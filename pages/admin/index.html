@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página da administração">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/display.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/fonts.css">
+    <link rel="stylesheet" href="../../styles/inputs.css">
+    <link rel="stylesheet" href="../../styles/margins.css">
+    <link rel="stylesheet" href="../../styles/modal.css">
+    <link rel="stylesheet" href="../../styles/positions.css">
+    <link rel="stylesheet" href="../../styles/fonts.css">
+    <link rel="stylesheet" href="./index.css">
+
+    <title>Título</title>
+</head>
+<body>
+    <header class="absolute flex justifyAround alignCenter">
+        <section class="pageLogo flex gap-1">
+            <img src="../../assets/img/Ellipse 1.svg" alt="Bola violeta">
+            <h1>Kenzie Empresas</h1>
+        </section>
+        <nav>
+            <button class="logout">Logout</button>
+        </nav>
+    </header>
+    <main class="absolute">
+        <section class="departments marginBottom">
+            <section class="departmentsHeader grid marginBottom">
+                <h3>Departamentos</h3>
+                <select class="selectCompany marginCentralize">
+                    <option value="">Selecionar empresas</option>
+                </select>
+                <button class="newDpt"><span>+</span> Criar</button>
+            </section>
+            <ul class="listDepartments flex gap-1">
+            </ul>
+        </section>
+        <section class="hiredUsers">
+            <h3 class="hiredTitle marginBottom">Usuário cadastrados</h3>
+            <ul class="allUsers flex gap-1 ">
+            </ul>
+        </section>
+    </main>
+    
+    <script src="./index.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body {
+    background-image: url("../../assets/img/Rectangle\ 7.svg");
+    background-attachment: fixed;
+    background-position: 60%;
+}
+header {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 7vh;
+    box-shadow: var(--shadow);
+    background-color: var(--color-white);
+}
+
+main {
+    top: 15vh;
+}
+
+.login {
+    width: 100vw;
+    background-color: var(--color-white-opaque);
+    padding: var(--paddingForm);
+}
+
+.allUsers li {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-blue);
+    padding: var(--paddingDptId) ;
+}
+
+.allUsers li {
+    width: 65%;
+}
+
+@media (min-width: 700px) {
+    header {
+        gap: 52%;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-around;
+        gap: var(--margin-2);
+        top: 20vh;
+        left: 29%;
+    }
+
+    .pageLogo {
+        padding-left: 2vw;
+    }
+
+    .dropdownBtn {
+        display: none;
+    }
+
+    .formsBtn {
+        display: flex;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 20vw;
+        height: 7vh;
+        background-color: var(--color-white);
+        box-shadow: none;
+        z-index: 3;
+    }
+
+    .login {
+        width: 40vw;
+    }
+}

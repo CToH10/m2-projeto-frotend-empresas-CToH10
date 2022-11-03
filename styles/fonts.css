@@ -1,0 +1,73 @@
+header h1 {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
+}
+
+.name {
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
+}
+
+.enterName {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
+}
+
+.coworkerName {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
+}
+
+.openHours, .sectorSelect, .coworkerLevel {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-2);
+    color: var(--color-black);
+}
+
+.userInfo p {
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-2);
+    color: var(--color-black);
+}
+
+.companyTitle {
+    font-size: var(--font-size-6);
+    font-weight: var(--font-weight-1);
+    color: var(--color-white);
+}
+
+.sectorSelect {
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-select);
+    padding: var(--paddingSectorSelect);
+    color: var(--color-blue)    ;
+    width: fit-content;
+}
+
+h3 {
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
+}
+
+.dptName, .userName {
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-1);
+    color: var(--color-black);
+}
+
+.dptDescription, .userLevel, .enterpriseName {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-2);
+    color: var(--color-black);
+}
+
+@media (min-width: 700px) {
+    .companyTitle {
+        text-align: center;
+    }
+}

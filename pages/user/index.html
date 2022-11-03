@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de usuário">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/display.css">
+    <link rel="stylesheet" href="../../styles/fonts.css">
+    <link rel="stylesheet" href="../../styles/inputs.css">
+    <link rel="stylesheet" href="../../styles/margins.css">
+    <link rel="stylesheet" href="../../styles/modal.css">
+    <link rel="stylesheet" href="../../styles/positions.css">
+    <link rel="stylesheet" href="../../styles/fonts.css">
+    <link rel="stylesheet" href="./index.css">
+
+    <title>Mudar com JS</title>
+</head>
+<body>
+    <header class="absolute flex justifyAround alignCenter">
+        <section class="pageLogo flex gap-1">
+            <img src="../../assets/img/Ellipse 1.svg" alt="Bola violeta">
+            <h1>Kenzie Empresas</h1>
+        </section>
+        <nav>
+            <button class="logout">Logout</button>
+        </nav>
+    </header>
+    <main class="absolute">
+        <section class="user flex justifyAround gap-4 biggerMarginBottom">
+            <section class="userId flexColumn gap-1">
+                <h2 class="name">Username</h2>
+                <section class="userInfo flexColumn gap-2">
+                    <p class="email">meu@email.com</p>
+                    <p class="professional_level">Pleno</p>
+                    <p class="kind_of_work">Home office</p>
+                </section>
+            </section>
+            <button class="edit"></button>
+        </section>
+        <section class="hiredInfo">
+            <section class="companyId marginBottom">
+                <h2 class="companyTitle">Company name - Department Name</h2>
+            </section>
+            <section class="coworkers">
+                <ul class="listCoworkers flex gap-1">
+                    <h2 class="notHired noShow">Você ainda não foi contratado</h2>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                    <li>
+                        <h3 class="coworkerName marginBottom">Nome do colega</h3>
+                        <p class="coworkerLevel">Sênior</p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </main>
+    
+    <script src="./index.js" type="module"></script>
+</body>
+</html>

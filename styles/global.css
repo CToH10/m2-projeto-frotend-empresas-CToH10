@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --color-blue: #4200FF;
+  --color-white: #FFFFFF;
+  --color-white-opaque:#fffffff2;
+  --color-white-grey:#F8F8F8;
+  --color-black: #000000;
+  --color-black-opaque: #00000033;
+  --color-black-opaque-2: #00000080;
+  --color-red: #CE4646;
+  --color-green: #4BA036;
+  --background-modal:#4623a721;
+
+  --radius-default: 0.5rem;
+  --radius-select: 15.938rem;
+
+  --font-size-1: 1rem;
+  --font-size-2: 1.125rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1.375rem;
+  --font-size-5: 1.875rem;
+  --font-size-6: 2rem;
+  --font-size-7 : 2.25rem;
+  --font-size-8 : 1.75rem;
+
+  --paddingSearchButton: 0;
+  --paddingNavBtn: 1.3vh 1vw;
+  --paddingFormInput: 1.5vh 3vw;
+  --paddingInfoLeft: 5vw;
+  --paddingForm: 4vh 3vw 3vh;
+  --paddingFormButtons: 1.32vh 0;
+  --padingSelect: 1vh 2vw;
+  --paddingDptId: 1.5vh 4vw 2vh;
+  --paddingSectorSelect: 1vh 4vw;
+  --paddingModal: 2.2vh 1.3vw;
+  --paddingHire: 1.2vh 1vw;
+  --paddingWorkersList: 1.4vh 0 1.4vh 1vw;
+  --paddingWorkerCard: 1vh 0.8vw;
+  --paddingEditText: 1vh 0 0 0.5vw;
+
+  --margin-1: 2.1vh;
+  --margin-2: 1vw;
+
+  --font-weight-1: 700;
+  --font-weight-2: 400;
+  
+  --shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.formsBtn {
+  top: 4.24vh;
+  right: -10vw;
+  width: 100vw;
+  height: 12vh;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow);
+  z-index: 3;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --paddingNavBtn: 1vh 1vw ;
+    --paddingSectorSelect: 0.5vh 1.5vw;
+    --paddingDptId: 1.5vh 2vw 2vh;
+    --paddingFormInput: 1.5vh 1.3vw;
+    --padingSelect: 0vh 0;
+  }
+
+  .formsBtn {
+    display: flex;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 12vh;
+    background-color: var(--color-white);
+    box-shadow: var(--shadow);
+    z-index: 3;
+  } 
+}
