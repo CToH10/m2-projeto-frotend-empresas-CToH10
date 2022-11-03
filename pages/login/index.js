@@ -33,12 +33,11 @@ loginForm.addEventListener("submit", async (event) =>{
 
     let formBody    = getValues(loginForm.elements)
     let loginResult = await login(formBody)
-    let admin       = await isAdmin(loginResult.token).is_admin
-    console.log(admin)
+    let admin       = await isAdmin(loginResult.token)
     localStorage.setItem("token", JSON.stringify(loginResult.token))
 
     if (loginResult.token) {
-        if (admin) {
+        if (admin.is_admin) {
             window.location.href = "../admin"
         } else {
             window.location.href = "../user"
