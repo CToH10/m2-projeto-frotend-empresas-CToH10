@@ -41,6 +41,27 @@ companiesList.forEach((elem) => {
     `)
 })
 
+selectCompany.addEventListener("change", async () => {
+    let value = selectCompany.options[selectCompany.selectedIndex].value
+    let list  = await listAllDepartments(token, value)
+    listDepartments.replaceChildren()
+    list.forEach((elem) => {
+        listDepartments.insertAdjacentHTML("beforeend", `
+        <li name="${elem.uuid}">
+            <section class="dptId marginBottom">
+                <h3 class="dptName">${elem.name}</h3>
+                <p class="dptDescription">${elem.description}</p>
+                <p class="enterpriseName">${elem.companies.name}</p>
+            </section>
+            <section class="interactDpt flex justifyCenter gap-4">
+                <button class="open"></button>
+                <button class="edit"></button>
+                <button class="delete"></button>
+            </section>
+        </li>
+        `)
+    })
+})
 
 logout.addEventListener("click", () => {
     localStorage.clear()

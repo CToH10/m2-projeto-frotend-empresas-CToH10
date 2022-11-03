@@ -1,5 +1,5 @@
 import { listingUsers, listTheCompanies } from "../pages/admin/index.js"
-import { adminEditUser, companiesBySector, createDpt, deleteDpt, deleteUser, editUser, hireWorker, outOfWork } from "./api.js"
+import { adminEditUser, companiesBySector, createDpt, deleteDpt, deleteUser, editUser, fireWorkerDpt, hireWorker, outOfWork } from "./api.js"
 import { getValues } from "./inputs.js"
 
 function modal() {
@@ -49,12 +49,12 @@ export function editModal(classList, token, id) {
 
         kindOfWork.id = "kind_of_work"
         homeOffice.id = "home office"
-        hybrid.id     = "híbrido"
+        hybrid.id     = "hibrido"
         presential.id = "presencial"
 
         selectKind.value = ""
         homeOffice.value = "home office"
-        hybrid.value     = "híbrido"
+        hybrid.value     = "hibrido"
         presential.value = "presencial"
 
         selectKind.innerText = "Selecionar modalidade de trabalho"
@@ -248,26 +248,35 @@ export function viewDepartment(dpt, token, id, listingNoJobs, employed) {
     let thisSector    = employed
     let infoText      = [...dpt.children[0].children]
 
-    thisSector.forEach((unem) => {
+    thisSector.forEach((worker) => {
         let workerCard    = document.createElement("li")
         let workerInfo    = document.createElement("section")
         let workerName    = document.createElement("h3")
         let workerLevel   = document.createElement("p")
         let workerCompany = document.createElement("p")
         let fireWorker    = document.createElement("button")
+        let proLevel = worker.professional_level
+        proLevel = proLevel.charAt(0).toUpperCase() + proLevel.slice(1)
         workerCard.classList    = "workerCard flexColumn gap-1"
         workerInfo.classList    = "workerInfo flexColumn gap-2"
         workerName.classList    = "dptDesc"
         workerLevel.classList   = "companyName"
         workerCompany.classList = "companyName"
         fireWorker.classList    = "fireWorker"
-        workerName.innerText    = unem.username
-        workerLevel.innerText   = "Pleno"
-        workerCompany.innerText = "Company name"
+        workerName.innerText    = worker.username
+        workerLevel.innerText   = proLevel
+        workerCompany.innerText = infoText[2].textContent
         fireWorker.innerText    = "Desligar"
+        fireWorker.id           = worker.uuid
         workersList.appendChild(workerCard)
         workerCard.append(workerInfo, fireWorker)
         workerInfo.append(workerName, workerLevel, workerCompany)
+
+        fireWorker.addEventListener("click", () => {
+            fireWorkerDpt(token, fireWorker.id)
+            window.confirm()
+            modalSect.remove()
+        })
 
     })
     
@@ -315,6 +324,7 @@ export function viewDepartment(dpt, token, id, listingNoJobs, employed) {
         event.preventDefault()
         let body = {department_uuid: modalBox.id,...getValues(getWorker.elements)}
         hireWorker(token, body)
+        modalSect.remove()
     })
 
     modalSect.appendChild(modalBox)

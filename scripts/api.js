@@ -62,8 +62,8 @@ export async function companiesBySector(sector = "") {
     }
 }
 
-export async function listAllDepartments(token) {
-    try { let departments = await fetch(`${baseUrl}departments`, {
+export async function listAllDepartments(token, id = "") {
+    try { let departments = await fetch(`${baseUrl}departments/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -256,6 +256,19 @@ export async function hireWorker(token, body) {
         })
 
         let newHireJson = await newHire.json()
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export async function fireWorkerDpt(token, id) {
+    try{
+        let byeWorker = await fetch(`${baseUrl}departments/dismiss/${id}`, {
+            method: "PATCH",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
     } catch (err) {
         console.log(err)
     }
