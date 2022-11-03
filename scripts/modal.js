@@ -1,3 +1,7 @@
+import { makeProfile } from "../pages/user/index.js"
+import { editUser } from "./api.js"
+import { getValues } from "./inputs.js"
+
 function modal() {
     let modal = document.createElement("section")
     modal.classList = "modal flex justifyCenter alignCenter absolute front"
@@ -241,7 +245,7 @@ export function viewDepartment() {
     return modalSect
 }
 
-export function editProfile() {
+export function editProfile(token) {
     let modalSect     = modal()
     let modalBox      = document.createElement("section")
     let closeModal    = document.createElement("button")
@@ -252,13 +256,13 @@ export function editProfile() {
     let passwordInput = document.createElement("input")
     let confirmEdit   = document.createElement("button")
 
-    modalBox.classList = "modalBox editBox flexColumn justifyBetween relative"
-    closeModal.classList = "dismissButton absolute"
-    editForm.classList = "editForm flexColumn gap-1"
+    modalBox.classList      = "modalBox editBox flexColumn justifyBetween relative"
+    closeModal.classList    = "dismissButton absolute"
+    editForm.classList      = "editForm flexColumn gap-1"
     userNameInput.classList = "newInput"
-    emailInput.classList = "newInput"
+    emailInput.classList    = "newInput"
     passwordInput.classList = "newInput"
-    confirmEdit.classList = "confirmEdit"
+    confirmEdit.classList   = "confirmEdit"
 
     confirmEdit.type = "submit"
 
@@ -271,11 +275,15 @@ export function editProfile() {
         modalSect.remove()
     })
 
-    emailInput.type = "email"
+    userNameInput.id = "username"
+    emailInput.id    = "email"
+    passwordInput.id = "password"
+
+    emailInput.type    = "email"
     passwordInput.type = "password"
 
     userNameInput.placeholder = "Seu nome"
-    emailInput.placeholder = "Seu e-mail"
+    emailInput.placeholder    = "Seu e-mail"
     passwordInput.placeholder = "Sua senha"
 
     editTitle.innerText   = "Editar perfil"
@@ -284,6 +292,14 @@ export function editProfile() {
     modalSect.appendChild(modalBox)
     modalBox.append(closeModal, editTitle, editForm)
     editForm.append(userNameInput, emailInput, passwordInput, confirmEdit)
+
+    editForm.addEventListener("submit", (event) => {
+        event.preventDefault()
+        let body = getValues(editForm.elements)
+
+        editUser(body, token)
+        location.reload()
+    })
 
     return modalSect
 }

@@ -102,7 +102,6 @@ export async function listSectors() {
 
     let sectorsJson = await sectors.json()
 
-    console.log(sectorsJson)
     return sectorsJson
 
     } catch (err) {
@@ -134,8 +133,26 @@ export async function coworkers(token) {
     })
 
     let listJson = await list.json()
-    console.log(listJson)
+    
     return listJson
+
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+export async function editUser(body, token) {
+    try { let edit = await fetch(`${baseUrl}users`, {
+        method: "PATCH", 
+        headers: {
+            ...headers,
+            Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(body)
+    })
+        let editJson = await edit.json()
+
+        return editJson
 
     } catch (err) {
         console.log(err)
