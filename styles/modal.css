@@ -185,6 +185,14 @@
     .editForm {
         height: 70%;
     }
+
+    .fireWorker {
+        width: fit-content;
+    }
+
+    .workerCard {
+        width: fit-content;
+    }
 }
 
 @media (max-width: 699px) {
