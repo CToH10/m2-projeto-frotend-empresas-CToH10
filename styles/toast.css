@@ -1,0 +1,23 @@
+.toast {
+    padding: var(--paddingFormInput);
+    border-radius: var(--radius-select);
+    animation: appear 3000ms ease-in forwards;
+}
+
+.redToast {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+.greenToast {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}
+
+@keyframes appear {
+    0%   {right: 3vw; bottom:0vh; opacity: 0.4}
+    25%  {right: 4vw; bottom:5vh; opacity: 0.5}
+    50%  {right: 4vw; bottom:5vh; opacity: 0.7}
+    75%  {right: 4vw; bottom:5vh; opacity: 0.8}
+    100% {right: 4vw; bottom:5vh; opacity: 1}
+}
