@@ -13,6 +13,9 @@ const kindWork      = document.querySelector(".kind_of_work")
 const companyTitle  = document.querySelector(".companyTitle")
 const listCoworkers = document.querySelector(".listCoworkers")
 let token           = JSON.parse(localStorage.getItem("token"))
+if (!token) {
+    window.location.href = "../home"
+}
 let userProfile     = await userInfo(token)
 
 

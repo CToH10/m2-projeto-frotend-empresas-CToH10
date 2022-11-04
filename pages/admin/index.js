@@ -2,6 +2,7 @@ import { getButtons, listingUsers, listTheCompanies } from "../../scripts/admin.
 import { companiesBySector, employedDpt, listAllDepartments, listUsers, outOfWork } from "../../scripts/api.js"
 import { deleteModal, editModal, newDepartment, viewDepartment } from "../../scripts/modal.js"
 
+window.title           = "Admin"
 const body             = document.querySelector("body")
 const logout           = document.querySelector(".logout")
 const createEnterprise = document.querySelector(".newDpt")
@@ -10,9 +11,12 @@ const listDepartments  = document.querySelector(".listDepartments")
 const allUsers         = document.querySelector(".allUsers")
 let token              = JSON.parse(localStorage.getItem("token"))
 
-let companiesList = await companiesBySector()
+if (!token) {
+    window.location.href = "../home"
+}
+
+let companiesList   = await companiesBySector()
 let departmentsList = await listAllDepartments(token)
-window.title = "Admin"
 
 companiesList.forEach((elem) => {
     selectCompany.insertAdjacentHTML("beforeend", `
