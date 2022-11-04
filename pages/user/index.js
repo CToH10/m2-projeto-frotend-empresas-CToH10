@@ -49,12 +49,16 @@ function populateList() {
         listCoworkers.replaceChildren()
         coworkersList.forEach((person) => {
             if (person.username != userProfile.username) {
-                let workFrom = person.kind_of_work
-                workFrom     = workFrom.charAt(0).toUpperCase() + workFrom.slice(1)
+                let proLevel = person.professional_level
+                if (proLevel) {
+                    proLevel     = proLevel.charAt(0).toUpperCase() + proLevel.slice(1)
+                } else {
+                    proLevel = ""
+                }
                 listCoworkers.insertAdjacentHTML("beforeend", `
                 <li>
                 <h3 class="coworkerName marginBottom">${person.username}</h3>
-                <p class="coworkerLevel">${workFrom}</p>
+                <p class="coworkerLevel">${proLevel}</p>
                 </li>
                 `)
             }
