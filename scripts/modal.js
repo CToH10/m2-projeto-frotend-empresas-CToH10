@@ -1,6 +1,8 @@
 import { listingUsers, listTheCompanies } from "./admin.js"
 import { adminEditUser, companiesBySector, createDpt, deleteDpt, deleteUser, editDptDesc, editUser, employedDpt, fireWorkerDpt, hireWorker, outOfWork } from "./api.js"
 import { getValues } from "./inputs.js"
+import { createToast } from "./toast.js"
+import { makeProfile } from "./user.js"
 
 function modal() {
     let modal = document.createElement("section")
@@ -102,6 +104,7 @@ export function editModal(btn, token, id) {
             let values = getValues(editForm.elements)
     
             let edited = await adminEditUser(token, values, id)
+            createToast(edited)
             listingUsers()
             modalSect.remove()
         })
@@ -119,7 +122,8 @@ export function editModal(btn, token, id) {
         editForm.addEventListener("submit", (event) => {
             event.preventDefault()
             let body = getValues(editForm.elements)
-            editDptDesc(token, id, body)
+            let editDesc = editDptDesc(token, id, body)
+            createToast(editDesc)
             listTheCompanies()
             modalSect.remove()
         })
@@ -157,6 +161,7 @@ export function deleteModal(btn, token, id) {
         confirmDelete.addEventListener("click", async ()=>{
 
             let deletion = await deleteUser(token, confirmDelete.id)
+            createToast(deletion)
             listingUsers()
             modalSect.remove()
         })
@@ -166,6 +171,7 @@ export function deleteModal(btn, token, id) {
         confirmDelete.addEventListener("click", async ()=>{
 
             let deletion = await deleteDpt(token, confirmDelete.id)
+            createToast(deletion)
             listTheCompanies()
             modalSect.remove()
         })
@@ -232,7 +238,8 @@ export function newDepartment(list, token) {
     creationForm.addEventListener("submit", (event) => {
         event.preventDefault()
         let body = getValues(creationForm.elements)
-        createDpt(token, body)
+        let newDpt = createDpt(token, body)
+        createToast(newDpt)
         listTheCompanies()
         modalSect.remove()
     })
@@ -285,7 +292,8 @@ export function viewDepartment(dpt, token, id, listingNoJobs, employed) {
 
         fireWorker.addEventListener("click", () => {
             if (window.confirm("Você quer desligar esse usuário deste departamento?")){
-                fireWorkerDpt(token, fireWorker.id)
+                let byeWorker = fireWorkerDpt(token, fireWorker.id)
+                createToast(byeWorker)
                 modalSect.remove()
             }
         })
@@ -334,10 +342,11 @@ export function viewDepartment(dpt, token, id, listingNoJobs, employed) {
     getWorker.addEventListener("submit", async (event) => {
         event.preventDefault()
         let body = {department_uuid: modalBox.id,...getValues(getWorker.elements)}
-        await hireWorker(token, body)
+        let newWorker = await hireWorker(token, body)
+        createToast(newWorker)
+        console.log(newWorker)
         
         let workers = await employedDpt(token, modalBox.id)
-        console.log(workers)
         workersList.replaceChildren()
         workers.forEach((worker) => {
             let workerCard    = document.createElement("li")
@@ -366,7 +375,8 @@ export function viewDepartment(dpt, token, id, listingNoJobs, employed) {
     
             fireWorker.addEventListener("click", () => {
                 if (window.confirm("Você quer desligar esse usuário deste departamento?")){
-                    fireWorkerDpt(token, fireWorker.id)
+                    let byeWorker = fireWorkerDpt(token, fireWorker.id)
+                    createToast(byeWorker)
                     modalSect.remove()
                 }
             })
@@ -429,8 +439,10 @@ export function editProfile(token) {
         event.preventDefault()
         let body = getValues(editForm.elements)
 
-        editUser(body, token)
-        location.reload()
+        let editedUser = editUser(body, token)
+        createToast(editedUser)
+        makeProfile(token)
+        modalSect.remove()
     })
 
     return modalSect
