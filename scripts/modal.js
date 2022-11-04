@@ -268,7 +268,7 @@ export function viewDepartment(dpt, token, id, listingNoJobs, employed) {
         let fireWorker    = document.createElement("button")
         let proLevel = worker.professional_level
         proLevel = proLevel.charAt(0).toUpperCase() + proLevel.slice(1)
-        workerCard.classList    = "workerCard flexColumn gap-1"
+        workerCard.classList    = "workerCard flexColumn justifyBetween"
         workerInfo.classList    = "workerInfo flexColumn gap-2"
         workerName.classList    = "dptDesc"
         workerLevel.classList   = "companyName"
